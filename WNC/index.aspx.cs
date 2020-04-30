@@ -11,7 +11,7 @@ namespace WNC
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            username.Text = Session["name"].ToString();
         }
     }
 }

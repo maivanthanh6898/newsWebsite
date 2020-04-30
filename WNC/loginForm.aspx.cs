@@ -5,6 +5,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
+using System.Web.Services;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
@@ -12,12 +13,13 @@ namespace WNC
 {
     public partial class loginForm : System.Web.UI.Page
     {
-        private string sCnStr = ConfigurationManager.ConnectionStrings["dbConnection"].ConnectionString;
+        private static readonly String sCnStr = ConfigurationManager.ConnectionStrings["dbConnection"].ConnectionString;
         protected void Page_Load(object sender, EventArgs e)
         {
 
         }
-        protected void btnLogin_Click(object sender, EventArgs e)
+
+        public void btnLogin_Click(object sender, EventArgs e)
         {
             using (SqlConnection conn = new SqlConnection(sCnStr))
             {
@@ -32,9 +34,7 @@ namespace WNC
                 if (reader.HasRows)
                 {
                     Session["name"] = username.Text.ToString();
-                    Response.Write(@"<script language='javascript'>alert('Login Success');</script>");
-                    Response.Write(@"<script language='javascript'>console.log(" + Session["name"].ToString() + ");</script>");
-                    //Response.Redirect("index.aspx");
+                    Response.Redirect("index.aspx");
                 }
                 else
                 {
