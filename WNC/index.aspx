@@ -74,7 +74,7 @@
                                 <a href="#" class="login-btn">
                                     <i class="fa fa-user" aria-hidden="true"></i>
                                 </a>
-                                <asp:Label ID="username" runat="server">ádasdsadsd</asp:Label>
+                                <asp:Label ID="username" runat="server"></asp:Label>
                             </div>
                         </div>
                     </div>
@@ -302,140 +302,23 @@
 
                     <div class="col-12 col-md-5 col-lg-4">
                         <ul class="nav vizew-nav-tab" role="tablist">
-
-                            <li class="nav-item">
-                                <a class="nav-link active" id="post-1-tab" data-toggle="pill" href="#post-1" role="tab" aria-controls="post-1" aria-selected="true">
-                                    <!-- Single Blog Post -->
-                                    <div class="single-blog-post style-2 d-flex align-items-center">
-                                        <div class="post-thumbnail">
-                                            <img src="img/bg-img/3.jpg" alt="">
-                                        </div>
-                                        <div class="post-content">
-                                            <h6 class="post-title">Boys 'doing well' after Thai cave rescue</h6>
-                                            <div class="post-meta d-flex justify-content-between">
-                                                <span><i class="fa fa-comments-o" aria-hidden="true"></i>25</span>
-                                                <span><i class="fa fa-eye" aria-hidden="true"></i>11</span>
-                                                <span><i class="fa fa-thumbs-o-up" aria-hidden="true"></i>19</span>
+                            <asp:Repeater ID="Repeater1" runat="server">
+                                <ItemTemplate>
+                                    <li class="nav-item">
+                                        <a class="nav-link active" id="post-<%# Container.ItemIndex + 1 %>-tab" data-toggle="pill" href="#post-<%# Container.ItemIndex + 1 %>" role="tab" aria-controls="post-<%# Container.ItemIndex + 1 %>" aria-selected="true">
+                                            <!-- Single Blog Post -->
+                                            <div class="single-blog-post style-2 d-flex align-items-center">
+                                                <div class="post-thumbnail">
+                                                    <img src="img/content-img/<%# Eval("imgPicture") %>" alt="">
+                                                </div>
+                                                <div class="post-content">
+                                                    <h6 class="post-title"><%#Eval("sTitle")%></h6>
+                                                </div>
                                             </div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </li>
-
-                            <li class="nav-item">
-                                <a class="nav-link" id="post-2-tab" data-toggle="pill" href="#post-2" role="tab" aria-controls="post-2" aria-selected="false">
-                                    <!-- Single Blog Post -->
-                                    <div class="single-blog-post style-2 d-flex align-items-center">
-                                        <div class="post-thumbnail">
-                                            <img src="img/bg-img/4.jpg" alt="">
-                                        </div>
-                                        <div class="post-content">
-                                            <h6 class="post-title">Meet the 12 boys rescued from cave</h6>
-                                            <div class="post-meta d-flex justify-content-between">
-                                                <span><i class="fa fa-comments-o" aria-hidden="true"></i>14</span>
-                                                <span><i class="fa fa-eye" aria-hidden="true"></i>34</span>
-                                                <span><i class="fa fa-thumbs-o-up" aria-hidden="true"></i>84</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </li>
-
-                            <li class="nav-item">
-                                <a class="nav-link" id="post-3-tab" data-toggle="pill" href="#post-3" role="tab" aria-controls="post-3" aria-selected="false">
-                                    <!-- Single Blog Post -->
-                                    <div class="single-blog-post style-2 d-flex align-items-center">
-                                        <div class="post-thumbnail">
-                                            <img src="img/bg-img/5.jpg" alt="">
-                                        </div>
-                                        <div class="post-content">
-                                            <h6 class="post-title">Pogba dedicates France win to Thai cave boys</h6>
-                                            <div class="post-meta d-flex justify-content-between">
-                                                <span><i class="fa fa-comments-o" aria-hidden="true"></i>14</span>
-                                                <span><i class="fa fa-eye" aria-hidden="true"></i>34</span>
-                                                <span><i class="fa fa-thumbs-o-up" aria-hidden="true"></i>84</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </li>
-
-                            <li class="nav-item">
-                                <a class="nav-link" id="post-4-tab" data-toggle="pill" href="#post-4" role="tab" aria-controls="post-4" aria-selected="false">
-                                    <!-- Single Blog Post -->
-                                    <div class="single-blog-post style-2 d-flex align-items-center">
-                                        <div class="post-thumbnail">
-                                            <img src="img/bg-img/6.jpg" alt="">
-                                        </div>
-                                        <div class="post-content">
-                                            <h6 class="post-title">How the world reacted to PM's Brexit crisis</h6>
-                                            <div class="post-meta d-flex justify-content-between">
-                                                <span><i class="fa fa-comments-o" aria-hidden="true"></i>24</span>
-                                                <span><i class="fa fa-eye" aria-hidden="true"></i>98</span>
-                                                <span><i class="fa fa-thumbs-o-up" aria-hidden="true"></i>63</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </li>
-
-                            <li class="nav-item">
-                                <a class="nav-link" id="post-5-tab" data-toggle="pill" href="#post-5" role="tab" aria-controls="post-5" aria-selected="false">
-                                    <!-- Single Blog Post -->
-                                    <div class="single-blog-post style-2 d-flex align-items-center">
-                                        <div class="post-thumbnail">
-                                            <img src="img/bg-img/4.jpg" alt="">
-                                        </div>
-                                        <div class="post-content">
-                                            <h6 class="post-title">Meet the 12 boys rescued from cave</h6>
-                                            <div class="post-meta d-flex justify-content-between">
-                                                <span><i class="fa fa-comments-o" aria-hidden="true"></i>14</span>
-                                                <span><i class="fa fa-eye" aria-hidden="true"></i>34</span>
-                                                <span><i class="fa fa-thumbs-o-up" aria-hidden="true"></i>84</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </li>
-
-                            <li class="nav-item">
-                                <a class="nav-link" id="post-6-tab" data-toggle="pill" href="#post-6" role="tab" aria-controls="post-6" aria-selected="false">
-                                    <!-- Single Blog Post -->
-                                    <div class="single-blog-post style-2 d-flex align-items-center">
-                                        <div class="post-thumbnail">
-                                            <img src="img/bg-img/6.jpg" alt="">
-                                        </div>
-                                        <div class="post-content">
-                                            <h6 class="post-title">How the world reacted to PM's Brexit crisis</h6>
-                                            <div class="post-meta d-flex justify-content-between">
-                                                <span><i class="fa fa-comments-o" aria-hidden="true"></i>24</span>
-                                                <span><i class="fa fa-eye" aria-hidden="true"></i>98</span>
-                                                <span><i class="fa fa-thumbs-o-up" aria-hidden="true"></i>63</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </li>
-
-                            <li class="nav-item">
-                                <a class="nav-link" id="post-7-tab" data-toggle="pill" href="#post-7" role="tab" aria-controls="post-7" aria-selected="false">
-                                    <!-- Single Blog Post -->
-                                    <div class="single-blog-post style-2 d-flex align-items-center">
-                                        <div class="post-thumbnail">
-                                            <img src="img/bg-img/4.jpg" alt="">
-                                        </div>
-                                        <div class="post-content">
-                                            <h6 class="post-title">Meet the 12 boys rescued from cave</h6>
-                                            <div class="post-meta d-flex justify-content-between">
-                                                <span><i class="fa fa-comments-o" aria-hidden="true"></i>14</span>
-                                                <span><i class="fa fa-eye" aria-hidden="true"></i>34</span>
-                                                <span><i class="fa fa-thumbs-o-up" aria-hidden="true"></i>84</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </li>
-
+                                        </a>
+                                    </li>
+                                </ItemTemplate>
+                            </asp:Repeater>
                         </ul>
                     </div>
                 </div>
