@@ -21,3 +21,14 @@ Create proc DoLogin
 as begin
 select * from tblUsers where [sUsername]= @username and  [sPassword]=@password
 end
+
+CREATE TABLE [dbo].[Table]
+(
+	[Id] INT NOT NULL PRIMARY KEY IDENTITY(1,1), 
+    [sTitle] NVARCHAR(MAX) NULL, 
+    [sContent] NVARCHAR(MAX) NULL, 
+    [bIsAproved] BIT NULL, 
+    [tPostedDate] DATETIME NULL, 
+    [sPostedBy] NVARCHAR(50) NULL
+)
+
