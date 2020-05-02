@@ -64,7 +64,7 @@
                             </div>
                             <!-- Top Search Area -->
                             <div class="top-search-area">
-                                <form action="index.html" method="post">
+                                <form action="index.aspx" method="post">
                                     <input type="search" name="top-search" id="topSearch" placeholder="Search...">
                                     <button type="submit" class="btn"><i class="fa fa-search" aria-hidden="true"></i></button>
                                 </form>
@@ -86,7 +86,7 @@
                     <nav class="classy-navbar justify-content-between" id="vizewNav">
 
                         <!-- Nav brand -->
-                        <a href="index.html" class="nav-brand">
+                        <a href="index.aspx" class="nav-brand">
                             <img src="img/core-img/logo.png" alt=""></a>
 
                         <!-- Navbar Toggler -->
@@ -104,11 +104,11 @@
                             <!-- Nav Start -->
                             <div class="classynav">
                                 <ul>
-                                    <li class="active"><a href="index.html">Home</a></li>
+                                    <li class="active"><a href="index.aspx">Home</a></li>
                                     <li><a href="archive-list.html">Archives</a></li>
                                     <li><a href="#">Pages</a>
                                         <ul class="dropdown">
-                                            <li><a href="index.html">- Home</a></li>
+                                            <li><a href="index.aspx">- Home</a></li>
                                             <li><a href="archive-list.html">- Archive List</a></li>
                                             <li><a href="archive-grid.html">- Archive Grid</a></li>
                                             <li><a href="single-post.html">- Single Post</a></li>
@@ -121,7 +121,7 @@
                                     <li><a href="#">Features</a>
                                         <div class="megamenu">
                                             <ul class="single-mega cn-col-4">
-                                                <li><a href="index.html">- Home</a></li>
+                                                <li><a href="index.aspx">- Home</a></li>
                                                 <li><a href="archive-list.html">- Archive List</a></li>
                                                 <li><a href="archive-grid.html">- Archive Grid</a></li>
                                                 <li><a href="single-post.html">- Single Post</a></li>
@@ -131,7 +131,7 @@
                                                 <li><a href="login.html">- Login</a></li>
                                             </ul>
                                             <ul class="single-mega cn-col-4">
-                                                <li><a href="index.html">- Home</a></li>
+                                                <li><a href="index.aspx">- Home</a></li>
                                                 <li><a href="archive-list.html">- Archive List</a></li>
                                                 <li><a href="archive-grid.html">- Archive Grid</a></li>
                                                 <li><a href="single-post.html">- Single Post</a></li>
@@ -141,7 +141,7 @@
                                                 <li><a href="login.html">- Login</a></li>
                                             </ul>
                                             <ul class="single-mega cn-col-4">
-                                                <li><a href="index.html">- Home</a></li>
+                                                <li><a href="index.aspx">- Home</a></li>
                                                 <li><a href="archive-list.html">- Archive List</a></li>
                                                 <li><a href="archive-grid.html">- Archive Grid</a></li>
                                                 <li><a href="single-post.html">- Single Post</a></li>
@@ -151,7 +151,7 @@
                                                 <li><a href="login.html">- Login</a></li>
                                             </ul>
                                             <ul class="single-mega cn-col-4">
-                                                <li><a href="index.html">- Home</a></li>
+                                                <li><a href="index.aspx">- Home</a></li>
                                                 <li><a href="archive-list.html">- Archive List</a></li>
                                                 <li><a href="archive-grid.html">- Archive Grid</a></li>
                                                 <li><a href="single-post.html">- Single Post</a></li>
@@ -236,7 +236,7 @@
                 <div class="col-12 col-sm-6 col-xl-3">
                     <div class="footer-widget mb-70">
                         <!-- Logo -->
-                        <a href="index.html" class="foo-logo d-block mb-4">
+                        <a href="index.aspx" class="foo-logo d-block mb-4">
                             <img src="img/core-img/logo2.png" alt=""></a>
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna</p>
                         <!-- Footer Newsletter Area -->

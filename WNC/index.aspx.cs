@@ -15,10 +15,18 @@ namespace WNC
         private static readonly String sCnStr = ConfigurationManager.ConnectionStrings["dbConnection"].ConnectionString;
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!Boolean.Parse(Session["isAdmin"].ToString()))
+            {
+                hyperlink1.Visible = false;
+            }
             loadRPTContent();
+            //Panel panel = (Panel)Repeater2.Items[0].FindControl("post-1");
+            //panel.Attributes.Add("class", "tab-pane fade active show");
             if (!string.IsNullOrEmpty(Session["name"] as string))
             {
                 username.Text = Session["name"].ToString();
+                hyperlink2.ToolTip = "Đăng xuất";
+                hyperlink2.NavigateUrl = "~/loginForm.aspx";
             }
         }
         private void loadRPTContent()
@@ -34,7 +42,9 @@ namespace WNC
                 DataTable dt = new DataTable();
                 da.Fill(dt);
                 Repeater1.DataSource = dt;
+                Repeater2.DataSource = dt;
                 Repeater1.DataBind();
+                Repeater2.DataBind();
             }
         }
     }

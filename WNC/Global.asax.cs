@@ -18,6 +18,7 @@ namespace WNC
         protected void Session_Start(object sender, EventArgs e)
         {
             Session["userName"] = "";
+            Session["isAdmin"] = false;
         }
 
         protected void Application_BeginRequest(object sender, EventArgs e)
