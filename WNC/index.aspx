@@ -108,65 +108,27 @@
                                 <!-- Nav Start -->
                                 <div class="classynav">
                                     <ul>
-                                        <li class="active"><a href="index.html">Home</a></li>
-                                        <li><a href="archive-list.html">Archives</a></li>
-                                        <li><a href="#">Pages</a>
+                                        <li class="active"><a href="index.html">Trang chủ</a></li>
+                                        <li>
+                                            <a href="#">Danh mục</a>
                                             <ul class="dropdown">
-                                                <li><a href="index.html">- Home</a></li>
-                                                <li><a href="archive-list.html">- Archive List</a></li>
-                                                <li><a href="archive-grid.html">- Archive Grid</a></li>
-                                                <li><a href="single-post.html">- Single Post</a></li>
-                                                <li><a href="video-post.html">- Single Video Post</a></li>
-                                                <li><a href="contact.html">- Contact</a></li>
-                                                <li><a href="typography.html">- Typography</a></li>
-                                                <li><a href="login.html">- Login</a></li>
+                                                <li><a href="">- Thể thao</a></li>
+                                                <li><a href="">- Tình yêu</a></li>
+                                                <li><a href="">- Giáo dục</a></li>
+                                                <li><a href="">- Kinh doanh</a></li>
+                                                <!--<li><a href="index.html">- Home</a></li>
+                                            <li><a href="archive-list.html">- Archive List</a></li>
+                                            <li><a href="archive-grid.html">- Archive Grid</a></li>
+                                            <li><a href="single-post.html">- Single Post</a></li>
+                                            <li><a href="video-post.html">- Single Video Post</a></li>
+                                            <li><a href="contact.html">- Contact</a></li>
+                                            <li><a href="typography.html">- Typography</a></li>
+                                            <li><a href="login.html">- Login</a></li>-->
                                             </ul>
                                         </li>
-                                        <li><a href="#">Features</a>
-                                            <div class="megamenu">
-                                                <ul class="single-mega cn-col-4">
-                                                    <li><a href="index.html">- Home</a></li>
-                                                    <li><a href="archive-list.html">- Archive List</a></li>
-                                                    <li><a href="archive-grid.html">- Archive Grid</a></li>
-                                                    <li><a href="single-post.html">- Single Post</a></li>
-                                                    <li><a href="video-post.html">- Single Video Post</a></li>
-                                                    <li><a href="contact.html">- Contact</a></li>
-                                                    <li><a href="typography.html">- Typography</a></li>
-                                                    <li><a href="login.html">- Login</a></li>
-                                                </ul>
-                                                <ul class="single-mega cn-col-4">
-                                                    <li><a href="index.html">- Home</a></li>
-                                                    <li><a href="archive-list.html">- Archive List</a></li>
-                                                    <li><a href="archive-grid.html">- Archive Grid</a></li>
-                                                    <li><a href="single-post.html">- Single Post</a></li>
-                                                    <li><a href="video-post.html">- Single Video Post</a></li>
-                                                    <li><a href="contact.html">- Contact</a></li>
-                                                    <li><a href="typography.html">- Typography</a></li>
-                                                    <li><a href="login.html">- Login</a></li>
-                                                </ul>
-                                                <ul class="single-mega cn-col-4">
-                                                    <li><a href="index.html">- Home</a></li>
-                                                    <li><a href="archive-list.html">- Archive List</a></li>
-                                                    <li><a href="archive-grid.html">- Archive Grid</a></li>
-                                                    <li><a href="single-post.html">- Single Post</a></li>
-                                                    <li><a href="video-post.html">- Single Video Post</a></li>
-                                                    <li><a href="contact.html">- Contact</a></li>
-                                                    <li><a href="typography.html">- Typography</a></li>
-                                                    <li><a href="login.html">- Login</a></li>
-                                                </ul>
-                                                <ul class="single-mega cn-col-4">
-                                                    <li><a href="index.html">- Home</a></li>
-                                                    <li><a href="archive-list.html">- Archive List</a></li>
-                                                    <li><a href="archive-grid.html">- Archive Grid</a></li>
-                                                    <li><a href="single-post.html">- Single Post</a></li>
-                                                    <li><a href="video-post.html">- Single Video Post</a></li>
-                                                    <li><a href="contact.html">- Contact</a></li>
-                                                    <li><a href="typography.html">- Typography</a></li>
-                                                    <li><a href="login.html">- Login</a></li>
-                                                </ul>
-                                            </div>
-                                        </li>
-                                        <li><a href="contact.html">Contact</a></li>
+                                        <li><a href="archive-list.html">Đăng nhập</a></li>
+                                        <li><a href="contact.html">Liên hệ</a></li>
+                                        <li><a href="contact.html">Admin</a></li>
                                     </ul>
                                 </div>
                                 <!-- Nav End -->
@@ -651,30 +613,6 @@
                                         </div>
                                     </div>
                                 </div>
-
-                                <!-- Single Blog Post -->
-                                <div class="col-12 col-md-6">
-                                    <div class="single-post-area mb-80">
-                                        <!-- Post Thumbnail -->
-                                        <div class="post-thumbnail">
-                                            <img src="img/bg-img/13.jpg" alt="">
-
-                                            <!-- Video Duration -->
-                                            <span class="video-duration">05.03</span>
-                                        </div>
-
-                                        <!-- Post Content -->
-                                        <div class="post-content">
-                                            <a href="#" class="post-cata cata-sm cata-primary">Business</a>
-                                            <a href="single-post.html" class="post-title">Love Island star's boyfriend found dead after her funeral</a>
-                                            <div class="post-meta d-flex">
-                                                <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i>14</a>
-                                                <a href="#"><i class="fa fa-eye" aria-hidden="true"></i>38</a>
-                                                <a href="#"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i>22</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
                             </div>
 
                             <div class="row">
@@ -783,76 +721,6 @@
                                                     <a href="#"><i class="fa fa-eye" aria-hidden="true"></i>38</a>
                                                     <a href="#"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i>22</a>
                                                 </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="row mb-30">
-                                <!-- Single Blog Post -->
-                                <div class="col-12 col-lg-6">
-                                    <div class="single-blog-post style-3 d-flex mb-50">
-                                        <div class="post-thumbnail">
-                                            <img src="img/bg-img/16.jpg" alt="">
-                                        </div>
-                                        <div class="post-content">
-                                            <a href="single-post.html" class="post-title">Epileptic boy's cannabis let through border</a>
-                                            <div class="post-meta d-flex justify-content-between">
-                                                <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i>16</a>
-                                                <a href="#"><i class="fa fa-eye" aria-hidden="true"></i>26</a>
-                                                <a href="#"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i>17</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!-- Single Blog Post -->
-                                <div class="col-12 col-lg-6">
-                                    <div class="single-blog-post style-3 d-flex mb-50">
-                                        <div class="post-thumbnail">
-                                            <img src="img/bg-img/18.jpg" alt="">
-                                        </div>
-                                        <div class="post-content">
-                                            <a href="single-post.html" class="post-title">Paramedics 'drilled into boat death woman'</a>
-                                            <div class="post-meta d-flex justify-content-between">
-                                                <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i>16</a>
-                                                <a href="#"><i class="fa fa-eye" aria-hidden="true"></i>26</a>
-                                                <a href="#"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i>17</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!-- Single Blog Post -->
-                                <div class="col-12 col-lg-6">
-                                    <div class="single-blog-post style-3 d-flex mb-50">
-                                        <div class="post-thumbnail">
-                                            <img src="img/bg-img/19.jpg" alt="">
-                                        </div>
-                                        <div class="post-content">
-                                            <a href="single-post.html" class="post-title">Tory vice-chairs quit over PM's Brexit plan</a>
-                                            <div class="post-meta d-flex justify-content-between">
-                                                <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i>16</a>
-                                                <a href="#"><i class="fa fa-eye" aria-hidden="true"></i>26</a>
-                                                <a href="#"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i>17</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!-- Single Blog Post -->
-                                <div class="col-12 col-lg-6">
-                                    <div class="single-blog-post style-3 d-flex mb-50">
-                                        <div class="post-thumbnail">
-                                            <img src="img/bg-img/20.jpg" alt="">
-                                        </div>
-                                        <div class="post-content">
-                                            <a href="single-post.html" class="post-title">Do This One Simple Action for an Absolutely</a>
-                                            <div class="post-meta d-flex justify-content-between">
-                                                <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i>16</a>
-                                                <a href="#"><i class="fa fa-eye" aria-hidden="true"></i>26</a>
-                                                <a href="#"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i>17</a>
                                             </div>
                                         </div>
                                     </div>
