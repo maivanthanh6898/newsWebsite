@@ -22,36 +22,63 @@ as begin
 select * from tblUsers where [sUsername]= @username and  [sPassword]=@password
 end
 
-CREATE TABLE [dbo].[tblNews]
-(
-	[Id] INT NOT NULL PRIMARY KEY IDENTITY(1,1), 
-    [sTitle] NVARCHAR(MAX) NULL, 
-    [sContent] NVARCHAR(MAX) NULL, 
-    [bIsAproved] BIT NULL, 
-    [tPostedDate] DATETIME NULL, 
-    [sPostedBy] NVARCHAR(50) NULL,
-	[imgPicture] NVARCHAR(50) NULL,
-)
+CREATE TABLE [dbo].[tblNews] (
+    [Id]          INT            IDENTITY (1, 1) NOT NULL,
+    [sTitle]      NVARCHAR (MAX) NULL,
+    [sContent]    NVARCHAR (MAX) NULL,
+    [bIsAproved]  BIT            NULL,
+    [sPostedDate] NVARCHAR (50)  NULL default CURRENT_TIMESTAMP,
+    [sPostedBy]   NVARCHAR (50)  NULL,
+    [imgPicture]  NVARCHAR (50)  NULL,
+    [sCategory]   INT            NULL,
+    [iViews]      INT            NULL,
+    PRIMARY KEY CLUSTERED ([Id] ASC)
+);
 
-Create proc SP_doQueryIndexContent
+Alter proc SP_doQueryIndexContent
 as begin 
-select top 10 * from tblNews where bIsAproved = 1
+select top 10 * from tblNews,tblCategories where bIsAproved = 1 and tblCategories.Id=tblNews.sCategory
 end
 
 SET IDENTITY_INSERT [dbo].[tblNews] ON
-INSERT INTO [dbo].[tblNews] ([Id], [sTitle], [sContent], [bIsAproved], [tPostedDate], [sPostedBy], [imgPicture]) VALUES (1, N'16 ngày không có ca Covid-19, ca nghi ngờ mới nhất mắc sốt xuất huyết', N'16 ngày không có ca Covid-19, ca nghi ngờ mới nhất mắc sốt xuất huyết', 1, N'2012-12-12 00:00:00', N'1', N'xetnghiem-1588417025788.jpg')
-INSERT INTO [dbo].[tblNews] ([Id], [sTitle], [sContent], [bIsAproved], [tPostedDate], [sPostedBy], [imgPicture]) VALUES (2, N'Cứu bạn đuối nước khi tắm biển, nam thanh niên 18 tuổi tử vong', N'admin', 1, N'2012-12-12 00:00:00', N'1', N'cuubangapnan.jpeg')
-INSERT INTO [dbo].[tblNews] ([Id], [sTitle], [sContent], [bIsAproved], [tPostedDate], [sPostedBy], [imgPicture]) VALUES (3, N'title test display 1', N'Cứu bạn đuối nước khi tắm biển, nam thanh niên 18 tuổi tử vong', 1, N'2012-12-12 00:00:00', N'1', N'cuubangapnan.jpeg')
-INSERT INTO [dbo].[tblNews] ([Id], [sTitle], [sContent], [bIsAproved], [tPostedDate], [sPostedBy], [imgPicture]) VALUES (4, N'title test display 2', N'Cứu bạn đuối nước khi tắm biển, nam thanh niên 18 tuổi tử vong', 1, N'2012-12-12 00:00:00', N'1', N'xetnghiem-1588417025788.jpg')
-INSERT INTO [dbo].[tblNews] ([Id], [sTitle], [sContent], [bIsAproved], [tPostedDate], [sPostedBy], [imgPicture]) VALUES (5, N'title test display 3', N'Cứu bạn đuối nước khi tắm biển, nam thanh niên 18 tuổi tử vong', 1, N'2012-12-12 00:00:00', N'1', N'cuubangapnan.jpeg')
-INSERT INTO [dbo].[tblNews] ([Id], [sTitle], [sContent], [bIsAproved], [tPostedDate], [sPostedBy], [imgPicture]) VALUES (6, N'title test display 4', N'Cứu bạn đuối nước khi tắm biển, nam thanh niên 18 tuổi tử vong', 1, N'2012-12-12 00:00:00', N'1', N'download.png')
-INSERT INTO [dbo].[tblNews] ([Id], [sTitle], [sContent], [bIsAproved], [tPostedDate], [sPostedBy], [imgPicture]) VALUES (7, N'title test display 5', N'Cứu bạn đuối nước khi tắm biển, nam thanh niên 18 tuổi tử vong', 1, N'2012-12-12 00:00:00', N'1', N'cuubangapnan.jpeg')
-INSERT INTO [dbo].[tblNews] ([Id], [sTitle], [sContent], [bIsAproved], [tPostedDate], [sPostedBy], [imgPicture]) VALUES (8, N'title test display 6', N'Cứu bạn đuối nước khi tắm biển, nam thanh niên 18 tuổi tử vong', 1, N'2012-12-12 00:00:00', N'1', N'cuubangapnan.jpeg')
-INSERT INTO [dbo].[tblNews] ([Id], [sTitle], [sContent], [bIsAproved], [tPostedDate], [sPostedBy], [imgPicture]) VALUES (9, N'title test display 7', N'Cứu bạn đuối nước khi tắm biển, nam thanh niên 18 tuổi tử vong', 1, N'2012-12-12 00:00:00', N'1', N'cuubangapnan.jpeg')
-INSERT INTO [dbo].[tblNews] ([Id], [sTitle], [sContent], [bIsAproved], [tPostedDate], [sPostedBy], [imgPicture]) VALUES (10, N'title test display 8', N'Cứu bạn đuối nước khi tắm biển, nam thanh niên 18 tuổi tử vong', 1, N'2012-12-12 00:00:00', N'1', N'cuubangapnan.jpeg')
-INSERT INTO [dbo].[tblNews] ([Id], [sTitle], [sContent], [bIsAproved], [tPostedDate], [sPostedBy], [imgPicture]) VALUES (11, N'Cứu bạn đuối nước khi tắm biển, nam thanh niên 18 tuổi tử vong', N'Cứu bạn đuối nước khi tắm biển, nam thanh niên 18 tuổi tử vong', 1, N'2012-12-12 00:00:00', N'1', N'download.png')
-INSERT INTO [dbo].[tblNews] ([Id], [sTitle], [sContent], [bIsAproved], [tPostedDate], [sPostedBy], [imgPicture]) VALUES (12, N'Cứu bạn đuối nước khi tắm biển, nam thanh niên 18 tuổi tử vong', N'Cứu bạn đuối nước khi tắm biển, nam thanh niên 18 tuổi tử vong', 1, N'2012-12-12 00:00:00', N'1', N'cuubangapnan.jpeg')
-INSERT INTO [dbo].[tblNews] ([Id], [sTitle], [sContent], [bIsAproved], [tPostedDate], [sPostedBy], [imgPicture]) VALUES (13, N'Cứu bạn đuối nước khi tắm biển, nam thanh niên 18 tuổi tử vong', N'Cứu bạn đuối nước khi tắm biển, nam thanh niên 18 tuổi tử vong', 1, N'2012-12-12 00:00:00', N'1', N'cuubangapnan.jpeg')
-INSERT INTO [dbo].[tblNews] ([Id], [sTitle], [sContent], [bIsAproved], [tPostedDate], [sPostedBy], [imgPicture]) VALUES (14, N'Cứu bạn đuối nước khi tắm biển, nam thanh niên 18 tuổi tử vong', N'Cứu bạn đuối nước khi tắm biển, nam thanh niên 18 tuổi tử vong', 1, N'2012-12-12 00:00:00', N'1', N'xetnghiem-1588417025788.jpg')
+INSERT INTO [dbo].[tblNews] ([Id], [sTitle], [sContent], [bIsAproved], [sPostedDate], [sPostedBy], [imgPicture], [sCategory], [iViews]) VALUES (1, N'16 ngày không có ca Covid-19, ca nghi ngờ mới nhất mắc sốt xuất huyết', N'16 ngày không có ca Covid-19, ca nghi ngờ mới nhất mắc sốt xuất huyết', 1, N'2012-12-12 00:00:00', N'1', N'xetnghiem-1588417025788.jpg', 1, 0)
+INSERT INTO [dbo].[tblNews] ([Id], [sTitle], [sContent], [bIsAproved], [sPostedDate], [sPostedBy], [imgPicture], [sCategory], [iViews]) VALUES (2, N'Cứu bạn đuối nước khi tắm biển, nam thanh niên 18 tuổi tử vong', N'admin', 1, N'2012-12-12 00:00:00', N'1', N'cuubangapnan.jpeg', 1, 0)
+INSERT INTO [dbo].[tblNews] ([Id], [sTitle], [sContent], [bIsAproved], [sPostedDate], [sPostedBy], [imgPicture], [sCategory], [iViews]) VALUES (3, N'title test display 1', N'Cứu bạn đuối nước khi tắm biển, nam thanh niên 18 tuổi tử vong', 1, N'2012-12-12 00:00:00', N'1', N'cuubangapnan.jpeg', 1, 0)
+INSERT INTO [dbo].[tblNews] ([Id], [sTitle], [sContent], [bIsAproved], [sPostedDate], [sPostedBy], [imgPicture], [sCategory], [iViews]) VALUES (4, N'title test display 2', N'Cứu bạn đuối nước khi tắm biển, nam thanh niên 18 tuổi tử vong', 1, N'2012-12-12 00:00:00', N'1', N'xetnghiem-1588417025788.jpg', 2, 0)
+INSERT INTO [dbo].[tblNews] ([Id], [sTitle], [sContent], [bIsAproved], [sPostedDate], [sPostedBy], [imgPicture], [sCategory], [iViews]) VALUES (5, N'title test display 3', N'Cứu bạn đuối nước khi tắm biển, nam thanh niên 18 tuổi tử vong', 1, N'2012-12-12 00:00:00', N'1', N'cuubangapnan.jpeg', 2, 0)
+INSERT INTO [dbo].[tblNews] ([Id], [sTitle], [sContent], [bIsAproved], [sPostedDate], [sPostedBy], [imgPicture], [sCategory], [iViews]) VALUES (6, N'title test display 4', N'Cứu bạn đuối nước khi tắm biển, nam thanh niên 18 tuổi tử vong', 1, N'2012-12-12 00:00:00', N'1', N'download.png', 2, 0)
+INSERT INTO [dbo].[tblNews] ([Id], [sTitle], [sContent], [bIsAproved], [sPostedDate], [sPostedBy], [imgPicture], [sCategory], [iViews]) VALUES (7, N'title test display 5', N'Cứu bạn đuối nước khi tắm biển, nam thanh niên 18 tuổi tử vong', 1, N'2012-12-12 00:00:00', N'1', N'cuubangapnan.jpeg', 3, 0)
+INSERT INTO [dbo].[tblNews] ([Id], [sTitle], [sContent], [bIsAproved], [sPostedDate], [sPostedBy], [imgPicture], [sCategory], [iViews]) VALUES (8, N'title test display 6', N'Cứu bạn đuối nước khi tắm biển, nam thanh niên 18 tuổi tử vong', 1, N'2012-12-12 00:00:00', N'1', N'cuubangapnan.jpeg', 3, 0)
+INSERT INTO [dbo].[tblNews] ([Id], [sTitle], [sContent], [bIsAproved], [sPostedDate], [sPostedBy], [imgPicture], [sCategory], [iViews]) VALUES (9, N'title test display  9', N'Cứu bạn đuối nước khi tắm biển, nam thanh niên 18 tuổi tử vong', 1, NULL, N'1', N'cuubangapnan.jpeg', 3, 0)
+INSERT INTO [dbo].[tblNews] ([Id], [sTitle], [sContent], [bIsAproved], [sPostedDate], [sPostedBy], [imgPicture], [sCategory], [iViews]) VALUES (1003, N'12', N'2132131231', 1, N'2020-05-03 19:58:00', N'1', N'cuubangapnan.jpeg', 6, 1)
+INSERT INTO [dbo].[tblNews] ([Id], [sTitle], [sContent], [bIsAproved], [sPostedDate], [sPostedBy], [imgPicture], [sCategory], [iViews]) VALUES (1004, N'123123123', N'12312312312', 1, N'2020-05-03 20:05:02', N'1', N'cuubangapnan.jpeg', 7, 100)
+INSERT INTO [dbo].[tblNews] ([Id], [sTitle], [sContent], [bIsAproved], [sPostedDate], [sPostedBy], [imgPicture], [sCategory], [iViews]) VALUES (1005, N'12333332', N'123123', 1, N'2020-05-03 20:05:23', N'1', N'cuubangapnan.jpeg', 3, 8)
+INSERT INTO [dbo].[tblNews] ([Id], [sTitle], [sContent], [bIsAproved], [sPostedDate], [sPostedBy], [imgPicture], [sCategory], [iViews]) VALUES (1006, N'1211111', N'11111111', 1, N'2020-05-03 20:05:41', N'1', N'cuubangapnan.jpeg', 4, 50)
 SET IDENTITY_INSERT [dbo].[tblNews] OFF
 
+CREATE TABLE [dbo].[tblCategories]
+(
+	[Id] INT NOT NULL PRIMARY KEY IDENTITY(1,1), 
+    [sCategoryName] NVARCHAR(MAX) NULL
+)
+
+
+SET IDENTITY_INSERT [dbo].[tblCategories] ON
+INSERT INTO [dbo].[tblCategories] ([Id], [sCategoryName]) VALUES (1, N'Thể thao')
+INSERT INTO [dbo].[tblCategories] ([Id], [sCategoryName]) VALUES (2, N'Y tế')
+INSERT INTO [dbo].[tblCategories] ([Id], [sCategoryName]) VALUES (3, N'Khoa học')
+INSERT INTO [dbo].[tblCategories] ([Id], [sCategoryName]) VALUES (4, N'Chính trị')
+INSERT INTO [dbo].[tblCategories] ([Id], [sCategoryName]) VALUES (5, N'Pháp luật')
+INSERT INTO [dbo].[tblCategories] ([Id], [sCategoryName]) VALUES (6, N'Thế giới')
+INSERT INTO [dbo].[tblCategories] ([Id], [sCategoryName]) VALUES (7, N'Du lịch')
+INSERT INTO [dbo].[tblCategories] ([Id], [sCategoryName]) VALUES (8, N'Đời sống')
+SET IDENTITY_INSERT [dbo].[tblCategories] OFF
+
+Create proc SP_doGetTrendingNews
+as begin
+select top 3 * from tblNews,tblCategories
+where cast(sPostedDate as Date) = cast(getdate() as Date)
+AND tblNews.sCategory = tblCategories.Id
+and bIsAproved = 1
+order by iViews Desc
+end

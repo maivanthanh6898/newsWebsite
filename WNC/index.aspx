@@ -153,9 +153,31 @@
         <!-- ##### Hero Area Start ##### -->
         <section class="hero--area section-padding-80">
             <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <!-- Section Heading -->
+                        <div class="section-heading">
+                            <h4>Tin Mới nhất</h4>
+                            <div class="line"></div>
+                        </div>
+                    </div>
+                </div>
                 <div class="row no-gutters">
                     <div class="col-12 col-md-7 col-lg-8">
                         <div class="tab-content">
+                            <div class="tab-pane fade active show" id="post-0" role="tabpane0" aria-labelledby="post-0-tab">
+                                <!-- Single Feature Post -->
+                                <div class="single-feature-post video-post bg-img" style="background-image: url(img/content-img/welcome.png)">
+                                    <!-- Play Button -->
+                                    <%--<a href="video-post.html" class="btn play-btn"><i class="fa fa-play" aria-hidden="true"></i></a>--%>
+
+                                    <!-- Post Content -->
+                                    <div class="post-content">
+                                        <a href="#" class="post-cata">FitNews</a>
+                                        <a href="single-post.html" class="post-title">Cập nhật các tin tức mới nhất trong ngày</a>
+                                    </div>
+                                </div>
+                            </div>
                             <asp:Repeater ID="Repeater2" runat="server">
                                 <ItemTemplate>
                                     <div class="tab-pane fade" id="post-<%# Container.ItemIndex + 1 %>" role="tabpane<%# Container.ItemIndex + 1 %>" aria-labelledby="post-<%# Container.ItemIndex + 1 %>-tab">
@@ -166,15 +188,14 @@
 
                                             <!-- Post Content -->
                                             <div class="post-content">
-                                                <a href="#" class="post-cata">Sports</a>
+                                                <a href="#" class="post-cata cata-sm cata-danger"><%#Eval("sCategoryName")%></a>
                                                 <a href="single-post.html" class="post-title"><%#Eval("sTitle")%></a>
                                                 <div class="post-meta d-flex">
-                                                    <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i>25</a>
-                                                    <a href="#"><i class="fa fa-eye" aria-hidden="true"></i>25</a>
-                                                    <a href="#"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i>25</a>
+                                                    <%--<a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i>28</a>--%>
+                                                    <a href="#"><i class="fa fa-eye" aria-hidden="true"></i> <%#Eval("iViews")%></a>
+                                                    <a href="#"><i class="fa fa-upload" aria-hidden="true"></i> <%#Eval("sPostedDate")%></a>
                                                 </div>
                                             </div>
-
                                             <!-- Video Duration -->
                                             <%--<span class="video-duration">05.03</span>--%>
                                         </div>
@@ -217,7 +238,7 @@
                     <div class="col-12">
                         <!-- Section Heading -->
                         <div class="section-heading">
-                            <h4>Trending Videos</h4>
+                            <h4>Tin Nổi Bật</h4>
                             <div class="line"></div>
                         </div>
                     </div>
@@ -225,76 +246,29 @@
 
                 <div class="row">
                     <!-- Single Blog Post -->
-                    <div class="col-12 col-md-4">
-                        <div class="single-post-area mb-80">
-                            <!-- Post Thumbnail -->
-                            <div class="post-thumbnail">
-                                <img src="img/bg-img/11.jpg" alt="">
+                    <asp:Repeater ID="Repeater3" runat="server">
+                        <ItemTemplate>
+                            <div class="col-12 col-md-4">
+                                <div class="single-post-area mb-80">
+                                    <!-- Post Thumbnail -->
+                                    <div class="post-thumbnail">
+                                        <img src="img/content-img/<%# Eval("imgPicture") %>" alt="">
+                                    </div>
 
-                                <!-- Video Duration -->
-                                <span class="video-duration">05.03</span>
-                            </div>
-
-                            <!-- Post Content -->
-                            <div class="post-content">
-                                <a href="#" class="post-cata cata-sm cata-success">Sports</a>
-                                <a href="single-post.html" class="post-title">Warner Bros. Developing ‘The accountant’ Sequel</a>
-                                <div class="post-meta d-flex">
-                                    <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i>22</a>
-                                    <a href="#"><i class="fa fa-eye" aria-hidden="true"></i>16</a>
-                                    <a href="#"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i>15</a>
+                                    <!-- Post Content -->
+                                    <div class="post-content">
+                                        <a href="#" class="post-cata cata-sm cata-danger"><%#Eval("sCategoryName")%></a>
+                                        <a href="single-post.html" class="post-title"><%#Eval("sTitle")%></a>
+                                        <div class="post-meta d-flex">
+                                            <%--<a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i>28</a>--%>
+                                            <a href="#"><i class="fa fa-eye" aria-hidden="true"></i> <%#Eval("iViews")%></a>
+                                            <a href="#"><i class="fa fa-upload" aria-hidden="true"></i> <%#Eval("sPostedDate")%></a>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-
-                    <!-- Single Blog Post -->
-                    <div class="col-12 col-md-4">
-                        <div class="single-post-area mb-80">
-                            <!-- Post Thumbnail -->
-                            <div class="post-thumbnail">
-                                <img src="img/bg-img/12.jpg" alt="">
-
-                                <!-- Video Duration -->
-                                <span class="video-duration">05.03</span>
-                            </div>
-
-                            <!-- Post Content -->
-                            <div class="post-content">
-                                <a href="#" class="post-cata cata-sm cata-danger">Game</a>
-                                <a href="single-post.html" class="post-title">Searching for the 'angel' who held me on Westminste Bridge</a>
-                                <div class="post-meta d-flex">
-                                    <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i>28</a>
-                                    <a href="#"><i class="fa fa-eye" aria-hidden="true"></i>17</a>
-                                    <a href="#"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i>22</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Single Blog Post -->
-                    <div class="col-12 col-md-4">
-                        <div class="single-post-area mb-80">
-                            <!-- Post Thumbnail -->
-                            <div class="post-thumbnail">
-                                <img src="img/bg-img/13.jpg" alt="">
-
-                                <!-- Video Duration -->
-                                <span class="video-duration">05.03</span>
-                            </div>
-
-                            <!-- Post Content -->
-                            <div class="post-content">
-                                <a href="#" class="post-cata cata-sm cata-primary">Business</a>
-                                <a href="single-post.html" class="post-title">Love Island star's boyfriend found dead after her funeral</a>
-                                <div class="post-meta d-flex">
-                                    <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i>14</a>
-                                    <a href="#"><i class="fa fa-eye" aria-hidden="true"></i>38</a>
-                                    <a href="#"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i>22</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                        </ItemTemplate>
+                    </asp:Repeater>
                 </div>
 
             </div>
@@ -309,8 +283,9 @@
                         <div class="all-posts-area">
                             <!-- Section Heading -->
                             <div class="section-heading style-2">
-                                <h4>Featured Videos</h4>
-                                <div class="line"></div>
+                                <h4>Featured Videos
+                                </h4>
+                                <div class="line"></div>    
                             </div>
 
                             <!-- Featured Post Slides -->
