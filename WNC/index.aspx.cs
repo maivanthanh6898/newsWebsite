@@ -20,6 +20,7 @@ namespace WNC
                 hyperlink1.Visible = false;
             }
             loadRPTContent();
+            loadTrendingNew();
             //Panel panel = (Panel)Repeater2.Items[0].FindControl("post-1");
             //panel.Attributes.Add("class", "tab-pane fade active show");
             if (!string.IsNullOrEmpty(Session["name"] as string))
@@ -45,6 +46,23 @@ namespace WNC
                 Repeater2.DataSource = dt;
                 Repeater1.DataBind();
                 Repeater2.DataBind();
+            }
+        }
+
+        private void loadTrendingNew()
+        {
+            using (SqlConnection conn = new SqlConnection(sCnStr))
+            {
+                conn.Open();
+                SqlCommand comm = new SqlCommand();
+                comm.Connection = conn;
+                comm.CommandType = CommandType.StoredProcedure;
+                comm.CommandText = "SP_doGetTrendingNews";
+                SqlDataAdapter da = new SqlDataAdapter(comm);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                Repeater3.DataSource = dt;
+                Repeater3.DataBind();
             }
         }
     }
