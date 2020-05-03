@@ -214,6 +214,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="img\content-img\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="style.css.map" />

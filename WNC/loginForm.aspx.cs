@@ -16,7 +16,11 @@ namespace WNC
         private static readonly String sCnStr = ConfigurationManager.ConnectionStrings["dbConnection"].ConnectionString;
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (!string.IsNullOrEmpty(Session["name"] as string))
+            {
+                Session["name"] = "";
+                Session["isAdmin"] = false;
+            }
         }
 
         public void btnLogin_Click(object sender, EventArgs e)
@@ -33,8 +37,12 @@ namespace WNC
                 SqlDataReader reader = comm.ExecuteReader();
                 if (reader.HasRows)
                 {
-                    Session["name"] = username.Text.ToString();
-                    Response.Redirect("index.aspx");
+                    while (reader.Read())
+                    {
+                        Session["name"] = username.Text.ToString();
+                        Session["isAdmin"] = Boolean.Parse(reader["isAdmin"].ToString());
+                        Response.Redirect("index.aspx");
+                    }
                 }
                 else
                 {
