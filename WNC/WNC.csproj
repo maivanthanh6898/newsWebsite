@@ -188,7 +188,9 @@
     <Content Include="style.css" />
     <Content Include="typography.html" />
     <Content Include="video-post.html" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Global.asax.cs">
@@ -215,26 +217,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="style.css.map" />
-    <Content Include="scss\backtotop.scss" />
-    <Content Include="scss\blog.scss" />
-    <Content Include="scss\breadcrumb.scss" />
-    <Content Include="scss\buttons.scss" />
-    <Content Include="scss\contact.scss" />
-    <Content Include="scss\footer.scss" />
-    <Content Include="scss\header.scss" />
-    <Content Include="scss\heading.scss" />
-    <Content Include="scss\hero.scss" />
-    <Content Include="scss\preloader.scss" />
-    <Content Include="scss\reboot.scss" />
-    <Content Include="scss\spacing.scss" />
-    <Content Include="scss\style.scss" />
-    <Content Include="scss\widget.scss" />
-    <Content Include="scss\mixins\_flex.scss" />
-    <Content Include="scss\mixins\_miscellaneous.scss" />
-    <Content Include="scss\utilities\_color.scss" />
-    <Content Include="scss\utilities\_fonts.scss" />
-    <Content Include="scss\utilities\_responsive.scss" />
-    <Content Include="scss\utilities\_variables.scss" />
     <Content Include="fonts\classy.eot" />
     <Content Include="fonts\classy.ttf" />
     <Content Include="fonts\classy.woff" />
@@ -246,83 +228,6 @@
     <Content Include="fonts\themify.eot" />
     <Content Include="fonts\themify.ttf" />
     <Content Include="fonts\themify.woff" />
-    <Content Include=".sass-cache\03465f23f19c9b31771cc8acec61089cccc1845c\style.scssc" />
-    <Content Include=".sass-cache\03465f23f19c9b31771cc8acec61089cccc1845c\_fonts.scssc" />
-    <Content Include=".sass-cache\03465f23f19c9b31771cc8acec61089cccc1845c\_mixin.scssc" />
-    <Content Include=".sass-cache\03465f23f19c9b31771cc8acec61089cccc1845c\_responsive.scssc" />
-    <Content Include=".sass-cache\03465f23f19c9b31771cc8acec61089cccc1845c\_theme_color.scssc" />
-    <Content Include=".sass-cache\0e32b2304129ac52404fd36fc44fd6d55dee069c\backtotop.scssc" />
-    <Content Include=".sass-cache\0e32b2304129ac52404fd36fc44fd6d55dee069c\blog.scssc" />
-    <Content Include=".sass-cache\0e32b2304129ac52404fd36fc44fd6d55dee069c\breadcrumb.scssc" />
-    <Content Include=".sass-cache\0e32b2304129ac52404fd36fc44fd6d55dee069c\buttons.scssc" />
-    <Content Include=".sass-cache\0e32b2304129ac52404fd36fc44fd6d55dee069c\contact.scssc" />
-    <Content Include=".sass-cache\0e32b2304129ac52404fd36fc44fd6d55dee069c\footer.scssc" />
-    <Content Include=".sass-cache\0e32b2304129ac52404fd36fc44fd6d55dee069c\header.scssc" />
-    <Content Include=".sass-cache\0e32b2304129ac52404fd36fc44fd6d55dee069c\heading.scssc" />
-    <Content Include=".sass-cache\0e32b2304129ac52404fd36fc44fd6d55dee069c\hero.scssc" />
-    <Content Include=".sass-cache\0e32b2304129ac52404fd36fc44fd6d55dee069c\preloader.scssc" />
-    <Content Include=".sass-cache\0e32b2304129ac52404fd36fc44fd6d55dee069c\reboot.scssc" />
-    <Content Include=".sass-cache\0e32b2304129ac52404fd36fc44fd6d55dee069c\spacing.scssc" />
-    <Content Include=".sass-cache\0e32b2304129ac52404fd36fc44fd6d55dee069c\style.scssc" />
-    <Content Include=".sass-cache\0e32b2304129ac52404fd36fc44fd6d55dee069c\widget.scssc" />
-    <Content Include=".sass-cache\0e32b2304129ac52404fd36fc44fd6d55dee069c\_blog.scssc" />
-    <Content Include=".sass-cache\0e32b2304129ac52404fd36fc44fd6d55dee069c\_color.scssc" />
-    <Content Include=".sass-cache\0e32b2304129ac52404fd36fc44fd6d55dee069c\_fonts.scssc" />
-    <Content Include=".sass-cache\0e32b2304129ac52404fd36fc44fd6d55dee069c\_mixin.scssc" />
-    <Content Include=".sass-cache\0e32b2304129ac52404fd36fc44fd6d55dee069c\_responsive.scssc" />
-    <Content Include=".sass-cache\0e32b2304129ac52404fd36fc44fd6d55dee069c\_theme_color.scssc" />
-    <Content Include=".sass-cache\0e32b2304129ac52404fd36fc44fd6d55dee069c\_variables.scssc" />
-    <Content Include=".sass-cache\530a3acc31b0b3d3f7f5afd88ed40b860ea1ca7f\style.scssc" />
-    <Content Include=".sass-cache\530a3acc31b0b3d3f7f5afd88ed40b860ea1ca7f\_fonts.scssc" />
-    <Content Include=".sass-cache\530a3acc31b0b3d3f7f5afd88ed40b860ea1ca7f\_mixin.scssc" />
-    <Content Include=".sass-cache\530a3acc31b0b3d3f7f5afd88ed40b860ea1ca7f\_responsive.scssc" />
-    <Content Include=".sass-cache\530a3acc31b0b3d3f7f5afd88ed40b860ea1ca7f\_theme_color.scssc" />
-    <Content Include=".sass-cache\530a3acc31b0b3d3f7f5afd88ed40b860ea1ca7f\_variables.scssc" />
-    <Content Include=".sass-cache\79e8b4b23cae96bc59accba0bc44812257da6644\style.scssc" />
-    <Content Include=".sass-cache\79e8b4b23cae96bc59accba0bc44812257da6644\_fonts.scssc" />
-    <Content Include=".sass-cache\79e8b4b23cae96bc59accba0bc44812257da6644\_mixin.scssc" />
-    <Content Include=".sass-cache\79e8b4b23cae96bc59accba0bc44812257da6644\_responsive.scssc" />
-    <Content Include=".sass-cache\79e8b4b23cae96bc59accba0bc44812257da6644\_theme_color.scssc" />
-    <Content Include=".sass-cache\79e8b4b23cae96bc59accba0bc44812257da6644\_variables.scssc" />
-    <Content Include=".sass-cache\82b7a64a6998190f01312a0c1f7661264cd7f171\style.scssc" />
-    <Content Include=".sass-cache\82b7a64a6998190f01312a0c1f7661264cd7f171\_fonts.scssc" />
-    <Content Include=".sass-cache\82b7a64a6998190f01312a0c1f7661264cd7f171\_mixin.scssc" />
-    <Content Include=".sass-cache\82b7a64a6998190f01312a0c1f7661264cd7f171\_responsive.scssc" />
-    <Content Include=".sass-cache\82b7a64a6998190f01312a0c1f7661264cd7f171\_theme_color.scssc" />
-    <Content Include=".sass-cache\82b7a64a6998190f01312a0c1f7661264cd7f171\_variables.scssc" />
-    <Content Include=".sass-cache\9255b8d9268a3257bde5fa63e05857c6564e153a\_color.scssc" />
-    <Content Include=".sass-cache\9255b8d9268a3257bde5fa63e05857c6564e153a\_fonts.scssc" />
-    <Content Include=".sass-cache\9255b8d9268a3257bde5fa63e05857c6564e153a\_responsive.scssc" />
-    <Content Include=".sass-cache\9255b8d9268a3257bde5fa63e05857c6564e153a\_variables.scssc" />
-    <Content Include=".sass-cache\9568d30ed5d2cebc2ad5df4154c8df8099b75c0b\style.scssc" />
-    <Content Include=".sass-cache\9568d30ed5d2cebc2ad5df4154c8df8099b75c0b\_mixin.scssc" />
-    <Content Include=".sass-cache\9568d30ed5d2cebc2ad5df4154c8df8099b75c0b\_responsive.scssc" />
-    <Content Include=".sass-cache\9568d30ed5d2cebc2ad5df4154c8df8099b75c0b\_theme_color.scssc" />
-    <Content Include=".sass-cache\9568d30ed5d2cebc2ad5df4154c8df8099b75c0b\_variables.scssc" />
-    <Content Include=".sass-cache\aaea34438c4adf88ad126fd9f0fe12a19e9263ac\style.scssc" />
-    <Content Include=".sass-cache\aaea34438c4adf88ad126fd9f0fe12a19e9263ac\_fonts.scssc" />
-    <Content Include=".sass-cache\aaea34438c4adf88ad126fd9f0fe12a19e9263ac\_mixin.scssc" />
-    <Content Include=".sass-cache\aaea34438c4adf88ad126fd9f0fe12a19e9263ac\_responsive.scssc" />
-    <Content Include=".sass-cache\aaea34438c4adf88ad126fd9f0fe12a19e9263ac\_theme_color.scssc" />
-    <Content Include=".sass-cache\b362b0918ebd42cf56ce6a76e2430595e644f539\style.scssc" />
-    <Content Include=".sass-cache\b362b0918ebd42cf56ce6a76e2430595e644f539\_fonts.scssc" />
-    <Content Include=".sass-cache\b362b0918ebd42cf56ce6a76e2430595e644f539\_mixin.scssc" />
-    <Content Include=".sass-cache\b362b0918ebd42cf56ce6a76e2430595e644f539\_responsive.scssc" />
-    <Content Include=".sass-cache\b362b0918ebd42cf56ce6a76e2430595e644f539\_theme_color.scssc" />
-    <Content Include=".sass-cache\b362b0918ebd42cf56ce6a76e2430595e644f539\_variables.scssc" />
-    <Content Include=".sass-cache\b687762b7660b1f71ae40e600add14c590cfdbc7\style.scssc" />
-    <Content Include=".sass-cache\b687762b7660b1f71ae40e600add14c590cfdbc7\_mixin.scssc" />
-    <Content Include=".sass-cache\b687762b7660b1f71ae40e600add14c590cfdbc7\_responsive.scssc" />
-    <Content Include=".sass-cache\b687762b7660b1f71ae40e600add14c590cfdbc7\_theme_color.scssc" />
-    <Content Include=".sass-cache\b687762b7660b1f71ae40e600add14c590cfdbc7\_variables.scssc" />
-    <Content Include=".sass-cache\d85c8cf619ac1df897d554b9bf37f413df87287f\style.scssc" />
-    <Content Include=".sass-cache\d85c8cf619ac1df897d554b9bf37f413df87287f\_fonts.scssc" />
-    <Content Include=".sass-cache\d85c8cf619ac1df897d554b9bf37f413df87287f\_mixin.scssc" />
-    <Content Include=".sass-cache\d85c8cf619ac1df897d554b9bf37f413df87287f\_responsive.scssc" />
-    <Content Include=".sass-cache\d85c8cf619ac1df897d554b9bf37f413df87287f\_theme_color.scssc" />
-    <Content Include=".sass-cache\dfcaea89727a6393ef5324335741098d1c0328cb\_flex.scssc" />
-    <Content Include=".sass-cache\dfcaea89727a6393ef5324335741098d1c0328cb\_miscellaneous.scssc" />
-    <Content Include=".sass-cache\dfcaea89727a6393ef5324335741098d1c0328cb\_mixin.scssc" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -355,12 +260,6 @@
       </FlavorProperties>
     </VisualStudio>
   </ProjectExtensions>
-  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
-    <PropertyGroup>
-      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
-    </PropertyGroup>
-    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
-  </Target>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
