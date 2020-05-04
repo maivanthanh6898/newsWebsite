@@ -178,7 +178,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <asp:Repeater ID="Repeater2" runat="server">
+                            <asp:Repeater ID="rptBigNews" runat="server">
                                 <ItemTemplate>
                                     <div class="tab-pane fade" id="post-<%# Container.ItemIndex + 1 %>" role="tabpane<%# Container.ItemIndex + 1 %>" aria-labelledby="post-<%# Container.ItemIndex + 1 %>-tab">
                                         <!-- Single Feature Post -->
@@ -192,8 +192,8 @@
                                                 <a href="single-post.html" class="post-title"><%#Eval("sTitle")%></a>
                                                 <div class="post-meta d-flex">
                                                     <%--<a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i>28</a>--%>
-                                                    <a href="#"><i class="fa fa-eye" aria-hidden="true"></i> <%#Eval("iViews")%></a>
-                                                    <a href="#"><i class="fa fa-upload" aria-hidden="true"></i> <%#Eval("sPostedDate")%></a>
+                                                    <a href="#"><i class="fa fa-eye" aria-hidden="true"></i><%#Eval("iViews")%></a>
+                                                    <a href="#"><i class="fa fa-upload" aria-hidden="true"></i><%#Eval("sPostedDate")%></a>
                                                 </div>
                                             </div>
                                             <!-- Video Duration -->
@@ -207,7 +207,7 @@
 
                     <div class="col-12 col-md-5 col-lg-4">
                         <ul class="nav vizew-nav-tab" role="tablist" tabindex="1" style="overflow: hidden; outline: none;">
-                            <asp:Repeater ID="Repeater1" runat="server">
+                            <asp:Repeater ID="rpt10LastestNews" runat="server">
                                 <ItemTemplate>
                                     <li class="nav-item">
                                         <a class="nav-link" id="post-<%# Container.ItemIndex + 1 %>-tab" data-toggle="pill" href="#post-<%# Container.ItemIndex + 1 %>" role="tab" aria-controls="post-<%# Container.ItemIndex + 1 %>" aria-selected="false">
@@ -244,11 +244,13 @@
                     </div>
                 </div>
 
-                <div class="row">
+                <div class="row mx-auto my-auto">
                     <!-- Single Blog Post -->
-                    <asp:Repeater ID="Repeater3" runat="server">
+
+                    <asp:Repeater ID="rptTredingNews" runat="server">
                         <ItemTemplate>
-                            <div class="col-12 col-md-4">
+
+                            <div class="col-lg-4 col-md-4">
                                 <div class="single-post-area mb-80">
                                     <!-- Post Thumbnail -->
                                     <div class="post-thumbnail">
@@ -261,14 +263,15 @@
                                         <a href="single-post.html" class="post-title"><%#Eval("sTitle")%></a>
                                         <div class="post-meta d-flex">
                                             <%--<a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i>28</a>--%>
-                                            <a href="#"><i class="fa fa-eye" aria-hidden="true"></i> <%#Eval("iViews")%></a>
-                                            <a href="#"><i class="fa fa-upload" aria-hidden="true"></i> <%#Eval("sPostedDate")%></a>
+                                            <a href="#"><i class="fa fa-eye" aria-hidden="true"></i><%#Eval("iViews")%></a>
+                                            <a href="#"><i class="fa fa-upload" aria-hidden="true"></i><%#Eval("sPostedDate")%></a>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </ItemTemplate>
                     </asp:Repeater>
+
                 </div>
 
             </div>
@@ -285,7 +288,7 @@
                             <div class="section-heading style-2">
                                 <h4>Featured Videos
                                 </h4>
-                                <div class="line"></div>    
+                                <div class="line"></div>
                             </div>
 
                             <!-- Featured Post Slides -->
@@ -1080,6 +1083,7 @@
     <script src="js/plugins/plugins.js"></script>
     <!-- Active js -->
     <script src="js/active.js"></script>
+    <script src="js/plugins/ckeditor/ckeditor.js"></script>
 </body>
 
 </html>
