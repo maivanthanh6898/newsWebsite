@@ -131,7 +131,11 @@
                                             <li><a href="login.html">- Login</a></li>-->
                                             </ul>
                                         </li>
-                                        <li><a href="archive-list.html">Đăng nhập</a></li>
+                                        <li>
+                                            <asp:HyperLink ID="hyperlink3"
+                                                NavigateUrl="loginForm.aspx"
+                                                Text="Đăng nhập"
+                                                runat="server" /></li>
                                         <li><a href="contact.html">Liên hệ</a></li>
                                         <li>
                                             <asp:HyperLink ID="hyperlink1"
@@ -285,191 +289,46 @@
                     <div class="col-12 col-md-7 col-lg-8">
                         <div class="all-posts-area">
                             <!-- Section Heading -->
-                            <div class="section-heading style-2">
-                                <h4>Featured Videos
-                                </h4>
-                                <div class="line"></div>
-                            </div>
-
-                            <!-- Featured Post Slides -->
-                            <div class="featured-post-slides owl-carousel mb-30">
-                                <!-- Single Feature Post -->
-                                <div class="single-feature-post video-post bg-img" style="background-image: url(img/bg-img/14.jpg);">
-                                    <!-- Play Button -->
-                                    <a href="video-post.html" class="btn play-btn"><i class="fa fa-play" aria-hidden="true"></i></a>
-
-                                    <!-- Post Content -->
-                                    <div class="post-content">
-                                        <a href="#" class="post-cata">Sports</a>
-                                        <a href="single-post.html" class="post-title">Reunification of migrant toddlers, parents should be completed Thursday</a>
-                                        <div class="post-meta d-flex">
-                                            <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i>25</a>
-                                            <a href="#"><i class="fa fa-eye" aria-hidden="true"></i>25</a>
-                                            <a href="#"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i>25</a>
-                                        </div>
-                                    </div>
-
-                                    <!-- Video Duration -->
-                                    <span class="video-duration">05.03</span>
-                                </div>
-
-                                <!-- Single Feature Post -->
-                                <div class="single-feature-post video-post bg-img" style="background-image: url(img/bg-img/7.jpg);">
-                                    <!-- Play Button -->
-                                    <a href="video-post.html" class="btn play-btn"><i class="fa fa-play" aria-hidden="true"></i></a>
-
-                                    <!-- Post Content -->
-                                    <div class="post-content">
-                                        <a href="#" class="post-cata">Sports</a>
-                                        <a href="single-post.html" class="post-title">Reunification of migrant toddlers, parents should be completed Thursday</a>
-                                        <div class="post-meta d-flex">
-                                            <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i>25</a>
-                                            <a href="#"><i class="fa fa-eye" aria-hidden="true"></i>25</a>
-                                            <a href="#"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i>25</a>
-                                        </div>
-                                    </div>
-
-                                    <!-- Video Duration -->
-                                    <span class="video-duration">05.03</span>
-                                </div>
-                            </div>
-
+                            <h4 style="text-align: center">Tin tức theo danh mục
+                            </h4>
+                            <br />
+                            <div class="line"></div>
                             <div class="row">
-                                <!-- Single Blog Post -->
-                                <div class="col-12 col-md-6">
-                                    <div class="single-post-area mb-80">
-                                        <!-- Post Thumbnail -->
-                                        <div class="post-thumbnail">
-                                            <img src="img/bg-img/12.jpg" alt="">
+                                <!-- Section Heading -->
+                                <asp:Repeater ID="ParentRepeater" runat="server" OnItemDataBound="ItemBound">
+                                    <ItemTemplate>
+                                        <div class="col-12 col-lg-6">
+                                            <div class="section-heading style-2">
+                                                <h4><%#Eval("sCategoryName")%></h4>
+                                                <asp:Label ID="lblId" Visible="false" Text='<%#Eval("Id")%>' runat="server"></asp:Label>
+                                                <div class="line"></div>
+                                            </div>
+                                            <div class="sport-video-slides owl-carousel mb-50">
+                                                <!-- Repeated data -->
+                                                <asp:Repeater ID="ChildRepeater" runat="server">
+                                                    <ItemTemplate>
+                                                        <div class="single-post-area">
+                                                            <!-- Post Thumbnail -->
+                                                            <div class="post-thumbnail">
+                                                                <img src="img/content-img/<%#Eval("imgPicture")%>" alt="">
+                                                            </div>
 
-                                            <!-- Video Duration -->
-                                            <span class="video-duration">05.03</span>
-                                        </div>
-
-                                        <!-- Post Content -->
-                                        <div class="post-content">
-                                            <a href="#" class="post-cata cata-sm cata-danger">Game</a>
-                                            <a href="single-post.html" class="post-title">Searching for the 'angel' who held me on Westminste Bridge</a>
-                                            <div class="post-meta d-flex">
-                                                <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i>28</a>
-                                                <a href="#"><i class="fa fa-eye" aria-hidden="true"></i>17</a>
-                                                <a href="#"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i>22</a>
+                                                            <!-- Post Content -->
+                                                            <div class="post-content">
+                                                                <a href="#" class="post-cata cata-sm cata-success"><%#Eval("sCategoryName")%></a>
+                                                                <a href="single-post.html" class="post-title"><%#Eval("sTitle")%></a>
+                                                                <div class="post-meta d-flex">
+                                                                    <a href="#"><i class="fa fa-eye" aria-hidden="true"></i><%#Eval("iViews")%></a>
+                                                                    <a href="#"><i class="fa fa-upload" aria-hidden="true"></i><%#Eval("sPostedDate")%></a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </ItemTemplate>
+                                                </asp:Repeater>
                                             </div>
                                         </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="row">
-                                <div class="col-12 col-lg-6">
-                                    <!-- Section Heading -->
-                                    <div class="section-heading style-2">
-                                        <h4>Sport Videos</h4>
-                                        <div class="line"></div>
-                                    </div>
-
-                                    <!-- Sports Video Slides -->
-                                    <div class="sport-video-slides owl-carousel mb-50">
-                                        <!-- Single Blog Post -->
-                                        <div class="single-post-area">
-                                            <!-- Post Thumbnail -->
-                                            <div class="post-thumbnail">
-                                                <img src="img/bg-img/15.jpg" alt="">
-
-                                                <!-- Video Duration -->
-                                                <span class="video-duration">05.03</span>
-                                            </div>
-
-                                            <!-- Post Content -->
-                                            <div class="post-content">
-                                                <a href="#" class="post-cata cata-sm cata-success">Sports</a>
-                                                <a href="single-post.html" class="post-title">Searching for the 'angel' who held me on Westminster Bridge</a>
-                                                <div class="post-meta d-flex">
-                                                    <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i>14</a>
-                                                    <a href="#"><i class="fa fa-eye" aria-hidden="true"></i>38</a>
-                                                    <a href="#"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i>22</a>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <!-- Single Blog Post -->
-                                        <div class="single-post-area">
-                                            <!-- Post Thumbnail -->
-                                            <div class="post-thumbnail">
-                                                <img src="img/bg-img/13.jpg" alt="">
-
-                                                <!-- Video Duration -->
-                                                <span class="video-duration">05.03</span>
-                                            </div>
-
-                                            <!-- Post Content -->
-                                            <div class="post-content">
-                                                <a href="#" class="post-cata cata-sm cata-success">Sports</a>
-                                                <a href="single-post.html" class="post-title">Searching for the 'angel' who held me on Westminster Bridge</a>
-                                                <div class="post-meta d-flex">
-                                                    <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i>14</a>
-                                                    <a href="#"><i class="fa fa-eye" aria-hidden="true"></i>38</a>
-                                                    <a href="#"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i>22</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col-12 col-lg-6">
-                                    <!-- Section Heading -->
-                                    <div class="section-heading style-2">
-                                        <h4>Business Videos</h4>
-                                        <div class="line"></div>
-                                    </div>
-
-                                    <!-- Business Video Slides -->
-                                    <div class="business-video-slides owl-carousel mb-50">
-                                        <!-- Single Blog Post -->
-                                        <div class="single-post-area">
-                                            <!-- Post Thumbnail -->
-                                            <div class="post-thumbnail">
-                                                <img src="img/bg-img/17.jpg" alt="">
-
-                                                <!-- Video Duration -->
-                                                <span class="video-duration">05.03</span>
-                                            </div>
-
-                                            <!-- Post Content -->
-                                            <div class="post-content">
-                                                <a href="#" class="post-cata cata-sm cata-primary">Business</a>
-                                                <a href="single-post.html" class="post-title">Full article Prince Charles's 'urgent' global research</a>
-                                                <div class="post-meta d-flex">
-                                                    <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i>14</a>
-                                                    <a href="#"><i class="fa fa-eye" aria-hidden="true"></i>38</a>
-                                                    <a href="#"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i>22</a>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <!-- Single Blog Post -->
-                                        <div class="single-post-area">
-                                            <!-- Post Thumbnail -->
-                                            <div class="post-thumbnail">
-                                                <img src="img/bg-img/13.jpg" alt="">
-
-                                                <!-- Video Duration -->
-                                                <span class="video-duration">05.03</span>
-                                            </div>
-
-                                            <!-- Post Content -->
-                                            <div class="post-content">
-                                                <a href="#" class="post-cata cata-sm cata-primary">Business</a>
-                                                <a href="single-post.html" class="post-title">Full article Prince Charles's 'urgent' global research</a>
-                                                <div class="post-meta d-flex">
-                                                    <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i>14</a>
-                                                    <a href="#"><i class="fa fa-eye" aria-hidden="true"></i>38</a>
-                                                    <a href="#"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i>22</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                                    </ItemTemplate>
+                                </asp:Repeater>
                             </div>
 
                             <!-- Section Heading -->
@@ -756,167 +615,67 @@
                                     <div class="line"></div>
                                 </div>
 
-                                <!-- Single YouTube Channel -->
-                                <div class="single-youtube-channel d-flex align-items-center">
-                                    <div class="youtube-channel-thumbnail">
-                                        <img src="img/bg-img/25.jpg" alt="">
+                                <asp:Repeater ID="Repeater4" runat="server">
+                                    <ItemTemplate>
+                                        <div class="single-youtube-channel d-flex align-items-center">
+                                            <div class="youtube-channel-thumbnail">
+                                                <img src="img/category-img/<%# Eval("sImage") %>" alt="">
+                                            </div>
+                                            <div class="youtube-channel-content">
+                                                <a href="single-post.html" class="channel-title"><%# Eval("sCategoryName") %></a>
+                                                <a href="#" class="btn subscribe-btn"><i class="fa fa-play-circle-o" aria-hidden="true"></i>Subscribe</a>
+                                            </div>
+                                        </div>
+                                    </ItemTemplate>
+                                </asp:Repeater>
+
+
+                                <!-- ***** Single Widget ***** -->
+                                <div class="single-widget newsletter-widget mb-50">
+                                    <!-- Section Heading -->
+                                    <div class="section-heading style-2 mb-30">
+                                        <h4>Newsletter</h4>
+                                        <div class="line"></div>
                                     </div>
-                                    <div class="youtube-channel-content">
-                                        <a href="single-post.html" class="channel-title">Music Channel</a>
-                                        <a href="#" class="btn subscribe-btn"><i class="fa fa-play-circle-o" aria-hidden="true"></i>Subscribe</a>
+                                    <p>Subscribe our newsletter gor get notification about new updates, information discount, etc.</p>
+                                    <!-- Newsletter Form -->
+                                    <div class="newsletter-form">
+                                        <form action="#" method="post">
+                                            <input type="email" name="nl-email" class="form-control mb-15" id="emailnl" placeholder="Enter your email">
+                                            <button type="submit" class="btn vizew-btn w-100">Subscribe</button>
+                                        </form>
                                     </div>
                                 </div>
 
-                                <!-- Single YouTube Channel -->
-                                <div class="single-youtube-channel d-flex align-items-center">
-                                    <div class="youtube-channel-thumbnail">
-                                        <img src="img/bg-img/26.jpg" alt="">
+                                <!-- ***** Single Widget ***** -->
+                                <div class="single-widget mb-50">
+                                    <!-- Section Heading -->
+                                    <div class="section-heading style-2 mb-30">
+                                        <h4>Tin tức nổi bật trong tuần
+                                        </h4>
+                                        <div class="line"></div>
                                     </div>
-                                    <div class="youtube-channel-content">
-                                        <a href="single-post.html" class="channel-title">Trending Channel</a>
-                                        <a href="#" class="btn subscribe-btn"><i class="fa fa-play-circle-o" aria-hidden="true"></i>Subscribe</a>
-                                    </div>
-                                </div>
 
-                                <!-- Single YouTube Channel -->
-                                <div class="single-youtube-channel d-flex align-items-center">
-                                    <div class="youtube-channel-thumbnail">
-                                        <img src="img/bg-img/27.jpg" alt="">
-                                    </div>
-                                    <div class="youtube-channel-content">
-                                        <a href="single-post.html" class="channel-title">Travel Channel</a>
-                                        <a href="#" class="btn subscribe-btn"><i class="fa fa-play-circle-o" aria-hidden="true"></i>Subscribe</a>
-                                    </div>
-                                </div>
-
-                                <!-- Single YouTube Channel -->
-                                <div class="single-youtube-channel d-flex align-items-center">
-                                    <div class="youtube-channel-thumbnail">
-                                        <img src="img/bg-img/28.jpg" alt="">
-                                    </div>
-                                    <div class="youtube-channel-content">
-                                        <a href="single-post.html" class="channel-title">Sport Channel</a>
-                                        <a href="#" class="btn subscribe-btn"><i class="fa fa-play-circle-o" aria-hidden="true"></i>Subscribe</a>
-                                    </div>
-                                </div>
-
-                                <!-- Single YouTube Channel -->
-                                <div class="single-youtube-channel d-flex align-items-center">
-                                    <div class="youtube-channel-thumbnail">
-                                        <img src="img/bg-img/29.jpg" alt="">
-                                    </div>
-                                    <div class="youtube-channel-content">
-                                        <a href="single-post.html" class="channel-title">TV Show Channel</a>
-                                        <a href="#" class="btn subscribe-btn"><i class="fa fa-play-circle-o" aria-hidden="true"></i>Subscribe</a>
-                                    </div>
+                                    <asp:Repeater ID="Repeater5" runat="server">
+                                        <ItemTemplate>
+                                            <div class="single-blog-post d-flex">
+                                                <div class="post-thumbnail">
+                                                    <img src="img/content-img/<%#Eval("imgPicture")%>" alt="">
+                                                </div>
+                                                <div class="post-content">
+                                                    <a href="single-post.html" class="post-title"><%#Eval("sTitle")%></a>
+                                                    <div class="post-meta d-flex justify-content-between">
+                                                        <a href="#"><i class="fa fa-eye" aria-hidden="true"></i><%#Eval("iViews")%></a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </ItemTemplate>
+                                    </asp:Repeater>
                                 </div>
                             </div>
-
-                            <!-- ***** Single Widget ***** -->
-                            <div class="single-widget newsletter-widget mb-50">
-                                <!-- Section Heading -->
-                                <div class="section-heading style-2 mb-30">
-                                    <h4>Newsletter</h4>
-                                    <div class="line"></div>
-                                </div>
-                                <p>Subscribe our newsletter gor get notification about new updates, information discount, etc.</p>
-                                <!-- Newsletter Form -->
-                                <div class="newsletter-form">
-                                    <form action="#" method="post">
-                                        <input type="email" name="nl-email" class="form-control mb-15" id="emailnl" placeholder="Enter your email">
-                                        <button type="submit" class="btn vizew-btn w-100">Subscribe</button>
-                                    </form>
-                                </div>
-                            </div>
-
-                            <!-- ***** Single Widget ***** -->
-                            <div class="single-widget mb-50">
-                                <!-- Section Heading -->
-                                <div class="section-heading style-2 mb-30">
-                                    <h4>Most Viewed Playlist</h4>
-                                    <div class="line"></div>
-                                </div>
-
-                                <!-- Single Blog Post -->
-                                <div class="single-blog-post d-flex">
-                                    <div class="post-thumbnail">
-                                        <img src="img/bg-img/1.jpg" alt="">
-                                    </div>
-                                    <div class="post-content">
-                                        <a href="single-post.html" class="post-title">DC Shoes: gymkhana five; the making of</a>
-                                        <div class="post-meta d-flex justify-content-between">
-                                            <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i>14</a>
-                                            <a href="#"><i class="fa fa-eye" aria-hidden="true"></i>34</a>
-                                            <a href="#"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i>84</a>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!-- Single Blog Post -->
-                                <div class="single-blog-post d-flex">
-                                    <div class="post-thumbnail">
-                                        <img src="img/bg-img/2.jpg" alt="">
-                                    </div>
-                                    <div class="post-content">
-                                        <a href="single-post.html" class="post-title">How To Make Orange Chicken Recipe?</a>
-                                        <div class="post-meta d-flex justify-content-between">
-                                            <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i>14</a>
-                                            <a href="#"><i class="fa fa-eye" aria-hidden="true"></i>34</a>
-                                            <a href="#"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i>84</a>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!-- Single Blog Post -->
-                                <div class="single-blog-post d-flex">
-                                    <div class="post-thumbnail">
-                                        <img src="img/bg-img/36.jpg" alt="">
-                                    </div>
-                                    <div class="post-content">
-                                        <a href="single-post.html" class="post-title">Sweet Yummy Chocolate in the</a>
-                                        <div class="post-meta d-flex justify-content-between">
-                                            <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i>14</a>
-                                            <a href="#"><i class="fa fa-eye" aria-hidden="true"></i>34</a>
-                                            <a href="#"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i>84</a>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!-- Single Blog Post -->
-                                <div class="single-blog-post d-flex">
-                                    <div class="post-thumbnail">
-                                        <img src="img/bg-img/37.jpg" alt="">
-                                    </div>
-                                    <div class="post-content">
-                                        <a href="single-post.html" class="post-title">DC Shoes: gymkhana five; the making of</a>
-                                        <div class="post-meta d-flex justify-content-between">
-                                            <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i>14</a>
-                                            <a href="#"><i class="fa fa-eye" aria-hidden="true"></i>34</a>
-                                            <a href="#"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i>84</a>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!-- Single Blog Post -->
-                                <div class="single-blog-post d-flex">
-                                    <div class="post-thumbnail">
-                                        <img src="img/bg-img/38.jpg" alt="">
-                                    </div>
-                                    <div class="post-content">
-                                        <a href="single-post.html" class="post-title">How To Make Orange Chicken Recipe?</a>
-                                        <div class="post-meta d-flex justify-content-between">
-                                            <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i>14</a>
-                                            <a href="#"><i class="fa fa-eye" aria-hidden="true"></i>34</a>
-                                            <a href="#"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i>84</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
                         </div>
                     </div>
                 </div>
-            </div>
         </section>
         <!-- ##### Vizew Psot Area End ##### -->
 

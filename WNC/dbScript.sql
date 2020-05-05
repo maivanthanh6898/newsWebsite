@@ -56,22 +56,25 @@ INSERT INTO [dbo].[tblNews] ([Id], [sTitle], [sContent], [bIsAproved], [sPostedD
 INSERT INTO [dbo].[tblNews] ([Id], [sTitle], [sContent], [bIsAproved], [sPostedDate], [sPostedBy], [imgPicture], [sCategory], [iViews]) VALUES (1006, N'1211111', N'11111111', 1, N'2020-05-03 20:05:41', N'1', N'cuubangapnan.jpeg', 4, 50)
 SET IDENTITY_INSERT [dbo].[tblNews] OFF
 
-CREATE TABLE [dbo].[tblCategories]
-(
-	[Id] INT NOT NULL PRIMARY KEY IDENTITY(1,1), 
-    [sCategoryName] NVARCHAR(MAX) NULL
-)
+CREATE TABLE [dbo].[tblCategories] (
+    [Id]            INT            IDENTITY (1, 1) NOT NULL,
+    [sCategoryName] NVARCHAR (MAX) NULL,
+    [sImage] NVARCHAR(50) NULL, 
+    PRIMARY KEY CLUSTERED ([Id] ASC)
+);
+
+
 
 
 SET IDENTITY_INSERT [dbo].[tblCategories] ON
-INSERT INTO [dbo].[tblCategories] ([Id], [sCategoryName]) VALUES (1, N'Thể thao')
-INSERT INTO [dbo].[tblCategories] ([Id], [sCategoryName]) VALUES (2, N'Y tế')
-INSERT INTO [dbo].[tblCategories] ([Id], [sCategoryName]) VALUES (3, N'Khoa học')
-INSERT INTO [dbo].[tblCategories] ([Id], [sCategoryName]) VALUES (4, N'Chính trị')
-INSERT INTO [dbo].[tblCategories] ([Id], [sCategoryName]) VALUES (5, N'Pháp luật')
-INSERT INTO [dbo].[tblCategories] ([Id], [sCategoryName]) VALUES (6, N'Thế giới')
-INSERT INTO [dbo].[tblCategories] ([Id], [sCategoryName]) VALUES (7, N'Du lịch')
-INSERT INTO [dbo].[tblCategories] ([Id], [sCategoryName]) VALUES (8, N'Đời sống')
+INSERT INTO [dbo].[tblCategories] ([Id], [sCategoryName], [sImage]) VALUES (1, N'Thể thao', N'sport.png')
+INSERT INTO [dbo].[tblCategories] ([Id], [sCategoryName], [sImage]) VALUES (2, N'Y tế', N'yte.jpg')
+INSERT INTO [dbo].[tblCategories] ([Id], [sCategoryName], [sImage]) VALUES (3, N'Khoa học', N'khoahoc.png')
+INSERT INTO [dbo].[tblCategories] ([Id], [sCategoryName], [sImage]) VALUES (4, N'Chính trị', N'chinhtri.jpg')
+INSERT INTO [dbo].[tblCategories] ([Id], [sCategoryName], [sImage]) VALUES (5, N'Pháp luật', N'luat.jpg')
+INSERT INTO [dbo].[tblCategories] ([Id], [sCategoryName], [sImage]) VALUES (6, N'Thế giới', N'thegioi.jpg')
+INSERT INTO [dbo].[tblCategories] ([Id], [sCategoryName], [sImage]) VALUES (7, N'Du lịch', N'dulich.jpg')
+INSERT INTO [dbo].[tblCategories] ([Id], [sCategoryName], [sImage]) VALUES (8, N'Đời sống', N'doisong.jpg')
 SET IDENTITY_INSERT [dbo].[tblCategories] OFF
 
 alter proc SP_doGetTrendingNews
@@ -83,8 +86,24 @@ and bIsAproved = 1
 order by iViews Desc
 end
 
-create proc getCategory
+Create proc SP_doGetCategory
 as begin 
 select * from tblCategories;
 end 
 
+Create proc SP_doGetTrendingNewsWeek
+as begin
+select top 10 * from tblNews
+where DATEDIFF(DAY, sPostedDate,  cast(getdate() as Date)) < 7
+and bIsAproved = 1
+order by iViews Desc
+end
+
+Create proc SP_doGetNewByCategory
+@categoryId int
+as begin
+select * from tblCategories,tblNews
+where tblCategories.Id=@categoryId
+and tblCategories.Id=tblNews.sCategory
+and tblNews.bIsAproved=1
+end
