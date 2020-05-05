@@ -336,57 +336,15 @@
                                 <h4>Latest News</h4>
                                 <div class="line"></div>
                             </div>
-
-                            <!-- Featured Post Slides -->
-                            <div class="featured-post-slides owl-carousel mb-30">
-                                <!-- Single Feature Post -->
-                                <div class="single-feature-post video-post bg-img" style="background-image: url(img/bg-img/14.jpg);">
-                                    <!-- Play Button -->
-                                    <a href="video-post.html" class="btn play-btn"><i class="fa fa-play" aria-hidden="true"></i></a>
-
-                                    <!-- Post Content -->
-                                    <div class="post-content">
-                                        <a href="#" class="post-cata">Sports</a>
-                                        <a href="single-post.html" class="post-title">Reunification of migrant toddlers, parents should be completed Thursday</a>
-                                        <div class="post-meta d-flex">
-                                            <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i>25</a>
-                                            <a href="#"><i class="fa fa-eye" aria-hidden="true"></i>25</a>
-                                            <a href="#"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i>25</a>
-                                        </div>
-                                    </div>
-
-                                    <!-- Video Duration -->
-                                    <span class="video-duration">05.03</span>
-                                </div>
-
-                                <!-- Single Feature Post -->
-                                <div class="single-feature-post video-post bg-img" style="background-image: url(img/bg-img/7.jpg);">
-                                    <!-- Play Button -->
-                                    <a href="video-post.html" class="btn play-btn"><i class="fa fa-play" aria-hidden="true"></i></a>
-
-                                    <!-- Post Content -->
-                                    <div class="post-content">
-                                        <a href="#" class="post-cata">Sports</a>
-                                        <a href="single-post.html" class="post-title">Reunification of migrant toddlers, parents should be completed Thursday</a>
-                                        <div class="post-meta d-flex">
-                                            <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i>25</a>
-                                            <a href="#"><i class="fa fa-eye" aria-hidden="true"></i>25</a>
-                                            <a href="#"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i>25</a>
-                                        </div>
-                                    </div>
-
-                                    <!-- Video Duration -->
-                                    <span class="video-duration">05.03</span>
-                                </div>
-                            </div>
-
                             <!-- Single Post Area -->
-                            <div class="single-post-area mb-30">
+                            <asp:Repeater ID="rptLastestNews" runat="server">
+                                <ItemTemplate>
+                                    <div class="single-post-area mb-30">
                                 <div class="row align-items-center">
                                     <div class="col-12 col-lg-6">
                                         <!-- Post Thumbnail -->
                                         <div class="post-thumbnail">
-                                            <img src="img/bg-img/21.jpg" alt="">
+                                            <img src="img/content-img/<%# Eval("imgPicture") %>" alt="">
 
                                             <!-- Video Duration -->
                                             <span class="video-duration">05.03</span>
@@ -395,123 +353,25 @@
                                     <div class="col-12 col-lg-6">
                                         <!-- Post Content -->
                                         <div class="post-content mt-0">
-                                            <a href="#" class="post-cata cata-sm cata-success">Sports</a>
-                                            <a href="single-post.html" class="post-title mb-2">May fights on after Johnson savages Brexit approach</a>
+                                            <a href="#" class="post-cata cata-sm cata-success"><%# Eval("sCategoryName") %></a>
+                                            <a href="single-post.html" class="post-title mb-2"><%# Eval("sTitle") %></a>
                                             <div class="post-meta d-flex align-items-center mb-2">
-                                                <a href="#" class="post-author">By Jane</a>
+                                                <a href="#" class="post-author">By <%# Eval("sName") %></a>
                                                 <i class="fa fa-circle" aria-hidden="true"></i>
-                                                <a href="#" class="post-date">Sep 08, 2018</a>
+                                                <a href="#" class="post-date"><%# Eval("sPostedDate") %></a>
                                             </div>
-                                            <p class="mb-2">Quisque mollis tristique ante. Proin ligula eros, varius id tristique sit amet, rutrum non ligula.</p>
+                                            <p class="mb-2"><%# Eval("sContent") %></p>
                                             <div class="post-meta d-flex">
                                                 <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i>32</a>
-                                                <a href="#"><i class="fa fa-eye" aria-hidden="true"></i>42</a>
+                                                <a href="#"><i class="fa fa-eye" aria-hidden="true"></i><%# Eval("iViews") %></a>
                                                 <a href="#"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i>7</a>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-
-                            <!-- Single Post Area -->
-                            <div class="single-post-area mb-30">
-                                <div class="row align-items-center">
-                                    <div class="col-12 col-lg-6">
-                                        <!-- Post Thumbnail -->
-                                        <div class="post-thumbnail">
-                                            <img src="img/bg-img/22.jpg" alt="">
-
-                                            <!-- Video Duration -->
-                                            <span class="video-duration">05.03</span>
-                                        </div>
-                                    </div>
-                                    <div class="col-12 col-lg-6">
-                                        <!-- Post Content -->
-                                        <div class="post-content mt-0">
-                                            <a href="#" class="post-cata cata-sm cata-danger">Game</a>
-                                            <a href="single-post.html" class="post-title mb-2">Thailand cave rescue: Boys 'doing well' after spending night</a>
-                                            <div class="post-meta d-flex align-items-center mb-2">
-                                                <a href="#" class="post-author">By Jane</a>
-                                                <i class="fa fa-circle" aria-hidden="true"></i>
-                                                <a href="#" class="post-date">Sep 08, 2018</a>
-                                            </div>
-                                            <p class="mb-2">Quisque mollis tristique ante. Proin ligula eros, varius id tristique sit amet, rutrum non ligula.</p>
-                                            <div class="post-meta d-flex">
-                                                <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i>32</a>
-                                                <a href="#"><i class="fa fa-eye" aria-hidden="true"></i>42</a>
-                                                <a href="#"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i>7</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Single Post Area -->
-                            <div class="single-post-area mb-30">
-                                <div class="row align-items-center">
-                                    <div class="col-12 col-lg-6">
-                                        <!-- Post Thumbnail -->
-                                        <div class="post-thumbnail">
-                                            <img src="img/bg-img/23.jpg" alt="">
-
-                                            <!-- Video Duration -->
-                                            <span class="video-duration">05.03</span>
-                                        </div>
-                                    </div>
-                                    <div class="col-12 col-lg-6">
-                                        <!-- Post Content -->
-                                        <div class="post-content mt-0">
-                                            <a href="#" class="post-cata cata-sm cata-primary">Business</a>
-                                            <a href="single-post.html" class="post-title mb-2">Theresa May battles Brexiteer backlash amid disquiet</a>
-                                            <div class="post-meta d-flex align-items-center mb-2">
-                                                <a href="#" class="post-author">By Jane</a>
-                                                <i class="fa fa-circle" aria-hidden="true"></i>
-                                                <a href="#" class="post-date">Sep 08, 2018</a>
-                                            </div>
-                                            <p class="mb-2">Quisque mollis tristique ante. Proin ligula eros, varius id tristique sit amet, rutrum non ligula.</p>
-                                            <div class="post-meta d-flex">
-                                                <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i>32</a>
-                                                <a href="#"><i class="fa fa-eye" aria-hidden="true"></i>42</a>
-                                                <a href="#"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i>7</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Single Post Area -->
-                            <div class="single-post-area mb-30">
-                                <div class="row align-items-center">
-                                    <div class="col-12 col-lg-6">
-                                        <!-- Post Thumbnail -->
-                                        <div class="post-thumbnail">
-                                            <img src="img/bg-img/24.jpg" alt="">
-
-                                            <!-- Video Duration -->
-                                            <span class="video-duration">05.03</span>
-                                        </div>
-                                    </div>
-                                    <div class="col-12 col-lg-6">
-                                        <!-- Post Content -->
-                                        <div class="post-content mt-0">
-                                            <a href="#" class="post-cata cata-sm cata-danger">Game</a>
-                                            <a href="single-post.html" class="post-title mb-2">Theresa May warned Brexit strategy 'risks putting Jeremy Corbyn</a>
-                                            <div class="post-meta d-flex align-items-center mb-2">
-                                                <a href="#" class="post-author">By Jane</a>
-                                                <i class="fa fa-circle" aria-hidden="true"></i>
-                                                <a href="#" class="post-date">Sep 08, 2018</a>
-                                            </div>
-                                            <p class="mb-2">Quisque mollis tristique ante. Proin ligula eros, varius id tristique sit amet, rutrum non ligula.</p>
-                                            <div class="post-meta d-flex">
-                                                <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i>32</a>
-                                                <a href="#"><i class="fa fa-eye" aria-hidden="true"></i>42</a>
-                                                <a href="#"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i>7</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
+                                </ItemTemplate>
+                            </asp:Repeater>
                         </div>
                     </div>
 
@@ -675,6 +535,7 @@
                             </div>
                         </div>
                     </div>
+                </div>
                 </div>
         </section>
         <!-- ##### Vizew Psot Area End ##### -->
