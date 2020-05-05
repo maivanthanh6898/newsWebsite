@@ -7,13 +7,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WNC
-{
-
-
-    public partial class index1
-    {
-
+namespace WNC {
+    
+    
+    public partial class index1 {
+        
         /// <summary>
         /// form1 control.
         /// </summary>
@@ -22,7 +20,7 @@ namespace WNC
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
-
+        
         /// <summary>
         /// hyperlink2 control.
         /// </summary>
@@ -31,7 +29,7 @@ namespace WNC
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.HyperLink hyperlink2;
-
+        
         /// <summary>
         /// username control.
         /// </summary>
@@ -40,7 +38,7 @@ namespace WNC
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label username;
-
+        
         /// <summary>
         /// hyperlink1 control.
         /// </summary>
@@ -49,32 +47,32 @@ namespace WNC
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.HyperLink hyperlink1;
-
+        
         /// <summary>
-        /// Repeater2 control.
+        /// rptBigNews control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater Repeater2;
-
+        protected global::System.Web.UI.WebControls.Repeater rptBigNews;
+        
         /// <summary>
-        /// Repeater1 control.
+        /// rpt10LastestNews control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater Repeater1;
-
+        protected global::System.Web.UI.WebControls.Repeater rpt10LastestNews;
+        
         /// <summary>
-        /// Repeater3 control.
+        /// rptTredingNews control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater Repeater3;
+        protected global::System.Web.UI.WebControls.Repeater rptTredingNews;
     }
 }

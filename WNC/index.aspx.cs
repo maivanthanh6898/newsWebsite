@@ -42,10 +42,10 @@ namespace WNC
                 SqlDataAdapter da = new SqlDataAdapter(comm);
                 DataTable dt = new DataTable();
                 da.Fill(dt);
-                Repeater1.DataSource = dt;
-                Repeater2.DataSource = dt;
-                Repeater1.DataBind();
-                Repeater2.DataBind();
+                rpt10LastestNews.DataSource = dt;
+                rptBigNews.DataSource = dt;
+                rpt10LastestNews.DataBind();
+                rptBigNews.DataBind();
             }
         }
 
@@ -61,8 +61,8 @@ namespace WNC
                 SqlDataAdapter da = new SqlDataAdapter(comm);
                 DataTable dt = new DataTable();
                 da.Fill(dt);
-                Repeater3.DataSource = dt;
-                Repeater3.DataBind();
+                rptTredingNews.DataSource = dt;
+                rptTredingNews.DataBind();
             }
         }
     }

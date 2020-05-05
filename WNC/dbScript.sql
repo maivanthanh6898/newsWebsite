@@ -35,7 +35,7 @@ CREATE TABLE [dbo].[tblNews] (
     PRIMARY KEY CLUSTERED ([Id] ASC)
 );
 
-Alter proc SP_doQueryIndexContent
+create proc SP_doQueryIndexContent
 as begin 
 select top 10 * from tblNews,tblCategories where bIsAproved = 1 and tblCategories.Id=tblNews.sCategory
 end
@@ -74,11 +74,17 @@ INSERT INTO [dbo].[tblCategories] ([Id], [sCategoryName]) VALUES (7, N'Du lịch
 INSERT INTO [dbo].[tblCategories] ([Id], [sCategoryName]) VALUES (8, N'Đời sống')
 SET IDENTITY_INSERT [dbo].[tblCategories] OFF
 
-Create proc SP_doGetTrendingNews
+alter proc SP_doGetTrendingNews
 as begin
-select top 3 * from tblNews,tblCategories
+select top 4 * from tblNews,tblCategories
 where cast(sPostedDate as Date) = cast(getdate() as Date)
 AND tblNews.sCategory = tblCategories.Id
 and bIsAproved = 1
 order by iViews Desc
 end
+
+create proc getCategory
+as begin 
+select * from tblCategories;
+end 
+
