@@ -79,7 +79,7 @@ SET IDENTITY_INSERT [dbo].[tblCategories] OFF
 
 alter proc SP_doGetTrendingNews
 as begin
-select top 4 * from tblNews,tblCategories
+select top 3 * from tblNews,tblCategories
 where cast(sPostedDate as Date) = cast(getdate() as Date)
 AND tblNews.sCategory = tblCategories.Id
 and bIsAproved = 1
@@ -89,6 +89,11 @@ end
 Create proc SP_doGetCategory
 as begin 
 select * from tblCategories;
+end 
+
+alter proc spGetLastestNews
+as begin 
+select top 4 * from tblUsers,tblNews,tblCategories where tblNews.sCategory = tblCategories.Id and bIsAproved = 1 order by sPostedDate desc
 end 
 
 Create proc SP_doGetTrendingNewsWeek

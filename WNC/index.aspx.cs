@@ -21,6 +21,7 @@ namespace WNC
             }
             loadRPTContent();
             loadTrendingNew();
+            loadLastestNews();
             loadCategory();
             loadCategoryNews();
             loadTrendingWeek();
@@ -67,6 +68,23 @@ namespace WNC
                 da.Fill(dt);
                 rptTredingNews.DataSource = dt;
                 rptTredingNews.DataBind();
+            }
+        }
+
+        private void loadLastestNews()
+        {
+            using (SqlConnection conn = new SqlConnection(sCnStr))
+            {
+                conn.Open();
+                SqlCommand comm = new SqlCommand();
+                comm.Connection = conn;
+                comm.CommandType = CommandType.StoredProcedure;
+                comm.CommandText = "spGetLastestNews";
+                SqlDataAdapter da = new SqlDataAdapter(comm);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                rptLastestNews.DataSource = dt;
+                rptLastestNews.DataBind();
             }
         }
 
