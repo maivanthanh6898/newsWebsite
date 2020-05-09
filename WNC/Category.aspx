@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="index.aspx.cs" Inherits="WNC.index1" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Category.aspx.cs" Inherits="WNC.Category" %>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -113,8 +113,8 @@
                                 <!-- Nav Start -->
                                 <div class="classynav">
                                     <ul>
-                                        <li class="active"><a href="index.aspx">Trang chủ</a></li>
-                                        <li>
+                                        <li ><a href="index.aspx">Trang chủ</a></li>
+                                        <li class="active">
                                             <a href="#">Danh mục</a>
                                             <ul class="dropdown">
                                                 <asp:Repeater ID="rptCategory" runat="server">
@@ -145,134 +145,6 @@
                 </div>
             </div>
         </header>
-        <!-- ##### Header Area End ##### -->
-
-        <!-- ##### Hero Area Start ##### -->
-        <section class="hero--area section-padding-80">
-            <div class="container">
-                <div class="row">
-                    <div class="col-12">
-                        <!-- Section Heading -->
-                        <div class="section-heading">
-                            <h4>Tin Mới nhất</h4>
-                            <div class="line"></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row no-gutters">
-                    <div class="col-12 col-md-7 col-lg-8">
-                        <div class="tab-content">
-                            <div class="tab-pane fade active show" id="post-0" role="tabpane0" aria-labelledby="post-0-tab">
-                                <!-- Single Feature Post -->
-                                <div class="single-feature-post video-post bg-img" style="background-image: url(img/content-img/welcome.png)">
-                                    <!-- Play Button -->
-                                    <%--<a href="video-post.html" class="btn play-btn"><i class="fa fa-play" aria-hidden="true"></i></a>--%>
-
-                                    <!-- Post Content -->
-                                    <div class="post-content">
-                                        <a href="#" class="post-cata">FitNews</a>
-                                        <a href="single-post.html" class="post-title">Cập nhật các tin tức mới nhất trong ngày</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <asp:Repeater ID="rptBigNews" runat="server">
-                                <ItemTemplate>
-                                    <div class="tab-pane fade" id="post-<%# Container.ItemIndex + 1 %>" role="tabpane<%# Container.ItemIndex + 1 %>" aria-labelledby="post-<%# Container.ItemIndex + 1 %>-tab">
-                                        <!-- Single Feature Post -->
-                                        <div class="single-feature-post video-post bg-img" style="background-image: url(img/content-img/<%# Eval("imgPicture") %>)">
-                                            <!-- Play Button -->
-                                            <%--<a href="video-post.html" class="btn play-btn"><i class="fa fa-play" aria-hidden="true"></i></a>--%>
-
-                                            <!-- Post Content -->
-                                            <div class="post-content">
-                                                <a href="#" class="post-cata cata-sm cata-danger"><%#Eval("sCategoryName")%></a>
-                                                <a href="single-post.html" class="post-title"><%#Eval("sTitle")%></a>
-                                                <div class="post-meta d-flex">
-                                                    <a href="#"><i class="fa fa-eye" aria-hidden="true"></i><%#Eval("iViews")%></a>
-                                                    <a href="#"><i class="fa fa-upload" aria-hidden="true"></i><%#Eval("sPostedDate")%></a>
-                                                </div>
-                                            </div>
-                                            <!-- Video Duration -->
-                                            <%--<span class="video-duration">05.03</span>--%>
-                                        </div>
-                                    </div>
-                                </ItemTemplate>
-                            </asp:Repeater>
-                        </div>
-                    </div>
-
-                    <div class="col-12 col-md-5 col-lg-4">
-                        <ul class="nav vizew-nav-tab" role="tablist" tabindex="1" style="overflow: hidden; outline: none;">
-                            <asp:Repeater ID="rpt10LastestNews" runat="server">
-                                <ItemTemplate>
-                                    <li class="nav-item">
-                                        <a class="nav-link" id="post-<%# Container.ItemIndex + 1 %>-tab" data-toggle="pill" href="#post-<%# Container.ItemIndex + 1 %>" role="tab" aria-controls="post-<%# Container.ItemIndex + 1 %>" aria-selected="false">
-                                            <!-- Single Blog Post -->
-                                            <div class="single-blog-post style-2 d-flex align-items-center">
-                                                <div class="post-thumbnail">
-                                                    <img src="img/content-img/<%# Eval("imgPicture") %>" alt="">
-                                                </div>
-                                                <div class="post-content">
-                                                    <h6 class="post-title"><%#Eval("sTitle")%></h6>
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </li>
-                                </ItemTemplate>
-                            </asp:Repeater>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- ##### Hero Area End ##### -->
-
-        <!-- ##### Trending Posts Area Start ##### -->
-        <section class="trending-posts-area">
-            <div class="container">
-                <div class="row">
-                    <div class="col-12">
-                        <!-- Section Heading -->
-                        <div class="section-heading">
-                            <h4>Tin Nổi Bật</h4>
-                            <div class="line"></div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="row mx-auto my-auto">
-                    <!-- Single Blog Post -->
-
-                    <asp:Repeater ID="rptTredingNews" runat="server">
-                        <ItemTemplate>
-
-                            <div class="col-lg-4 col-md-4">
-                                <div class="single-post-area mb-80">
-                                    <!-- Post Thumbnail -->
-                                    <div class="post-thumbnail">
-                                        <img src="img/content-img/<%# Eval("imgPicture") %>" alt="">
-                                    </div>
-
-                                    <!-- Post Content -->
-                                    <div class="post-content">
-                                        <a href="#" class="post-cata cata-sm cata-danger"><%#Eval("sCategoryName")%></a>
-                                        <a href="single-post.html" class="post-title"><%#Eval("sTitle")%></a>
-                                        <div class="post-meta d-flex">
-                                            <a href="#" class="post-author">By <%# Eval("sName") %></a>
-                                            <a href="#"><i class="fa fa-eye" aria-hidden="true"></i><%#Eval("iViews")%></a>
-                                            <a href="#"><i class="fa fa-upload" aria-hidden="true"></i><%#Eval("sPostedDate")%></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </ItemTemplate>
-                    </asp:Repeater>
-
-                </div>
-
-            </div>
-        </section>
-        <!-- ##### Trending Posts Area End ##### -->
 
         <!-- ##### Vizew Post Area Start ##### -->
         <section class="vizew-post-area mb-50">
@@ -281,55 +153,14 @@
                     <div class="col-12 col-md-7 col-lg-8">
                         <div class="all-posts-area">
                             <!-- Section Heading -->
-                            <h4 style="text-align: center">Tin tức theo danh mục
-                            </h4>
-                            <br />
-                            <div class="line"></div>
-                            <div class="row">
-                                <!-- Section Heading -->
-                                <asp:Repeater ID="ParentRepeater" runat="server" OnItemDataBound="ItemBound">
-                                    <ItemTemplate>
-                                        <div class="col-12 col-lg-6">
-                                            <div class="section-heading style-2">
-                                                <h4><%#Eval("sCategoryName")%></h4>
-                                                <asp:Label ID="lblId" Visible="false" Text='<%#Eval("Id")%>' runat="server"></asp:Label>
-                                                <div class="line"></div>
-                                            </div>
-                                            <div class="sport-video-slides owl-carousel mb-50">
-                                                <!-- Repeated data -->
-                                                <asp:Repeater ID="ChildRepeater" runat="server">
-                                                    <ItemTemplate>
-                                                        <div class="single-post-area">
-                                                            <!-- Post Thumbnail -->
-                                                            <div class="post-thumbnail">
-                                                                <img src="img/content-img/<%#Eval("imgPicture")%>" alt="">
-                                                            </div>
-
-                                                            <!-- Post Content -->
-                                                            <div class="post-content">
-                                                                <a href="#" class="post-cata cata-sm cata-success"><%#Eval("sCategoryName")%></a>
-                                                                <a href="single-post.html" class="post-title"><%#Eval("sTitle")%></a>
-                                                                <div class="post-meta d-flex">
-                                                                    <a href="#"><i class="fa fa-eye" aria-hidden="true"></i><%#Eval("iViews")%></a>
-                                                                    <a href="#"><i class="fa fa-upload" aria-hidden="true"></i><%#Eval("sPostedDate")%></a>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </ItemTemplate>
-                                                </asp:Repeater>
-                                            </div>
-                                        </div>
-                                    </ItemTemplate>
-                                </asp:Repeater>
-                            </div>
-
-                            <!-- Section Heading -->
                             <div class="section-heading style-2">
-                                <h4>Latest News</h4>
+                                <br />
+                                <h4 style="text-align:center" id="title" runat="server">Latest News</h4>
+                                <br />
                                 <div class="line"></div>
                             </div>
                             <!-- Single Post Area -->
-                            <asp:Repeater ID="rptLastestNews" runat="server">
+                            <asp:Repeater ID="rptNews" runat="server">
                                 <ItemTemplate>
                                     <div class="single-post-area mb-30">
                                         <div class="row align-items-center">
@@ -337,9 +168,6 @@
                                                 <!-- Post Thumbnail -->
                                                 <div class="post-thumbnail">
                                                     <img src="img/content-img/<%# Eval("imgPicture") %>" alt="">
-
-                                                    <!-- Video Duration -->
-                                                    <span class="video-duration">05.03</span>
                                                 </div>
                                             </div>
                                             <div class="col-12 col-lg-6">
@@ -352,11 +180,8 @@
                                                         <i class="fa fa-circle" aria-hidden="true"></i>
                                                         <a href="#" class="post-date"><%# Eval("sPostedDate") %></a>
                                                     </div>
-                                                    <p class="mb-2"><%# Eval("sContent") %></p>
                                                     <div class="post-meta d-flex">
-                                                        <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i>32</a>
                                                         <a href="#"><i class="fa fa-eye" aria-hidden="true"></i><%# Eval("iViews") %></a>
-                                                        <a href="#"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i>7</a>
                                                     </div>
                                                 </div>
                                             </div>
@@ -617,3 +442,4 @@
 </body>
 
 </html>
+

@@ -107,6 +107,7 @@
   <ItemGroup>
     <Content Include="archive-grid.html" />
     <Content Include="archive-list.html" />
+    <Content Include="Category.aspx" />
     <Content Include="contact.html" />
     <Content Include="css\animate.css" />
     <Content Include="css\bootstrap.min.css" />
@@ -618,6 +619,13 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Category.aspx.cs">
+      <DependentUpon>Category.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Category.aspx.designer.cs">
+      <DependentUpon>Category.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>

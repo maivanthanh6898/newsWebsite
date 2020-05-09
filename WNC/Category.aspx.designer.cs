@@ -11,7 +11,7 @@ namespace WNC
 {
 
 
-    public partial class index1
+    public partial class Category
     {
 
         /// <summary>
@@ -69,49 +69,22 @@ namespace WNC
         protected global::System.Web.UI.WebControls.HyperLink hyperlink1;
 
         /// <summary>
-        /// rptBigNews control.
+        /// title control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater rptBigNews;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl title;
 
         /// <summary>
-        /// rpt10LastestNews control.
+        /// rptNews control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater rpt10LastestNews;
-
-        /// <summary>
-        /// rptTredingNews control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater rptTredingNews;
-
-        /// <summary>
-        /// ParentRepeater control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater ParentRepeater;
-
-        /// <summary>
-        /// rptLastestNews control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater rptLastestNews;
+        protected global::System.Web.UI.WebControls.Repeater rptNews;
 
         /// <summary>
         /// Repeater4 control.

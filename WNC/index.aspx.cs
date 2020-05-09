@@ -100,6 +100,8 @@ namespace WNC
                 SqlDataAdapter da = new SqlDataAdapter(comm);
                 DataTable dt = new DataTable();
                 da.Fill(dt);
+                rptCategory.DataSource = dt;
+                rptCategory.DataBind();
                 Repeater4.DataSource = dt;
                 Repeater4.DataBind();
             }

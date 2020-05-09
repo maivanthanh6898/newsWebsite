@@ -91,9 +91,13 @@ as begin
 select * from tblCategories;
 end 
 
-alter proc spGetLastestNews
+SP_doGetCategory
+
+create proc spGetLastestNews
 as begin 
-select top 4 * from tblUsers,tblNews,tblCategories where tblNews.sCategory = tblCategories.Id and bIsAproved = 1 order by sPostedDate desc
+select top 4 * from tblUsers,tblNews,tblCategories 
+where tblNews.sCategory = tblCategories.Id and bIsAproved = 1 
+order by sPostedDate desc
 end 
 
 Create proc SP_doGetTrendingNewsWeek
@@ -107,8 +111,12 @@ end
 Create proc SP_doGetNewByCategory
 @categoryId int
 as begin
-select * from tblCategories,tblNews
+select * from tblCategories,tblNews,tblUsers
 where tblCategories.Id=@categoryId
 and tblCategories.Id=tblNews.sCategory
 and tblNews.bIsAproved=1
+and tblNews.sPostedBy = tblUsers.iID
 end
+
+
+SP_doGetNewByCategory 1
