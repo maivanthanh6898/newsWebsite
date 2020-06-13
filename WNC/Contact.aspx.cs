@@ -11,7 +11,10 @@ namespace WNC
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (!Boolean.Parse(Session["isAdmin"].ToString()))
+            {
+                hyperlink1.Visible = false;
+            }
         }
     }
 }

@@ -122,14 +122,14 @@ end
 
 SP_doGetNewByCategory 1
 
-CREATE PROCEDURE sp_InsertNewPost
+alter PROCEDURE sp_InsertNewPost
        -- Add the parameters for the stored procedure here
        @sTitle nvarchar(max),
        @sContent nvarchar(max),
        @bIsAproved bit,
        @sPostedDate nvarchar(50),
 	   @sPostedBy nvarchar(50),
-	   @imgPicture nvarchar(50),
+	   @imgPicture nvarchar(max),
 	   @sCategory int
 AS
 BEGIN
