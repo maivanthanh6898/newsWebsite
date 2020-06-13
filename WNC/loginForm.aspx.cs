@@ -16,6 +16,8 @@ namespace WNC
         private static readonly String sCnStr = ConfigurationManager.ConnectionStrings["dbConnection"].ConnectionString;
         protected void Page_Load(object sender, EventArgs e)
         {
+
+            loadCategory();
             if (!string.IsNullOrEmpty(Session["name"] as string))
             {
                 Session["name"] = "";
@@ -23,6 +25,22 @@ namespace WNC
             }
         }
 
+        private void loadCategory()
+        {
+            using (SqlConnection conn = new SqlConnection(sCnStr))
+            {
+                conn.Open();
+                SqlCommand comm = new SqlCommand();
+                comm.Connection = conn;
+                comm.CommandType = CommandType.StoredProcedure;
+                comm.CommandText = "SP_doGetCategory";
+                SqlDataAdapter da = new SqlDataAdapter(comm);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                rptCategory.DataSource = dt;
+                rptCategory.DataBind();
+            }
+        }
         public void btnLogin_Click(object sender, EventArgs e)
         {
             using (SqlConnection conn = new SqlConnection(sCnStr))

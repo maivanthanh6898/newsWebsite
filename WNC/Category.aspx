@@ -170,7 +170,7 @@
                                                 <!-- Post Content -->
                                                 <div class="post-content mt-0">
                                                     <a href="#" class="post-cata cata-sm cata-success"><%# Eval("sCategoryName") %></a>
-                                                    <a href="single-post.html" class="post-title mb-2"><%# Eval("sTitle") %></a>
+                                                    <a href="SinglePost.aspx?newId=<%#Eval("Id")%>" class="post-title mb-2"><%# Eval("sTitle") %></a>
                                                     <div class="post-meta d-flex align-items-center mb-2">
                                                         <a href="#" class="post-author">By <%# Eval("sName") %></a>
                                                         <i class="fa fa-circle" aria-hidden="true"></i>
@@ -254,7 +254,7 @@
                                                     <img src="img/content-img/<%#Eval("imgPicture")%>" alt="">
                                                 </div>
                                                 <div class="post-content">
-                                                    <a href="single-post.html" class="post-title"><%#Eval("sTitle")%></a>
+                                                    <a href="SinglePost.aspx?newId=<%#Eval("Id")%>" class="post-title"><%#Eval("sTitle")%></a>
                                                     <div class="post-meta d-flex justify-content-between">
                                                         <a href="#"><i class="fa fa-eye" aria-hidden="true"></i><%#Eval("iViews")%></a>
                                                     </div>
