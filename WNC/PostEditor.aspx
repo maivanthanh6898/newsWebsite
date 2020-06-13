@@ -145,9 +145,9 @@
     <!-- ##### Header Area End ##### -->
     <form id="form1" runat="server">
             <section class="hero--area section-padding-80">
-                <div class="form-group">
-                    <asp:DropDownList ID="ddlCategory" runat="server"></asp:DropDownList>
-                </div>
+                
+                    <asp:DropDownList ID="ddlCategory" AutoPostBack="True" runat="server"></asp:DropDownList>
+               
                 <div class="form-group">
                     <asp:TextBox type="text" class="form-control" ID="txtTitle" placeholder="Title" runat="server"></asp:TextBox>
                 </div>

@@ -34,6 +34,10 @@ namespace WNC
                 hyperlink2.NavigateUrl = "~/loginForm.aspx";
                 hyperlink3.Text = "Đăng xuất";
             }
+            if (!Boolean.Parse(Session["isAdmin"].ToString()))
+            {
+                hyperlink1.Visible = false;
+            }
         }
 
 

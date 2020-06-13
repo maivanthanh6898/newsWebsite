@@ -19,10 +19,15 @@ namespace WNC
         {
             if((bool) Session["isAdmin"] == true)
             {
-                LoadDDLCategory();
+                if (!Page.IsPostBack)
+                {
+                    LoadDDLCategory();
+
+                }
             }
             else
             {
+                hyperlink1.Visible = false;
                 Response.Redirect("index.aspx");
             }
         }
@@ -35,7 +40,7 @@ namespace WNC
                 using (SqlCommand cmd = new SqlCommand())
                 {
                     cmd.CommandType = System.Data.CommandType.StoredProcedure;
-                    cmd.CommandText = "getCategory";
+                    cmd.CommandText = "SP_doGetCategory";
                     cmd.Connection = sCnn;
                     SqlDataAdapter da = new SqlDataAdapter(cmd);
                     DataTable dt = new DataTable();
@@ -108,13 +113,14 @@ namespace WNC
                 comm.Parameters.AddWithValue("@sContent", ckcontent.InnerText);
                 comm.Parameters.AddWithValue("@bIsAproved", 1);
                 comm.Parameters.AddWithValue("@sPostedDate", new DateTime().ToString());
-                comm.Parameters.AddWithValue("@sPostedBy", Session["name"].ToString());
-                comm.Parameters.AddWithValue("@imgPicture", "img/content-img/" + strFileName);
+                comm.Parameters.AddWithValue("@sPostedBy", Session["idUser"].ToString());
+                comm.Parameters.AddWithValue("@imgPicture", strFileName);
                 comm.Parameters.AddWithValue("@sCategory", ddlCategory.SelectedValue);
                 int kq = comm.ExecuteNonQuery();
                 if (kq != 0)
                 {
                     Response.Write("<script>alert('Thành công')</script>");
+                    Response.Write(ddlCategory.SelectedValue);
                 }
                 else
                 {
