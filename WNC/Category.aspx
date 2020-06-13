@@ -106,8 +106,8 @@
                                 <!-- Nav Start -->
                                 <div class="classynav">
                                     <ul>
-                                        <li class="active"><a href="index.aspx">Trang chủ</a></li>
-                                        <li>
+                                        <li><a href="index.aspx">Trang chủ</a></li>
+                                        <li class="active">
                                             <a href="#">Danh mục</a>
                                             <ul class="dropdown">
                                                 <asp:Repeater ID="rptCategory" runat="server">

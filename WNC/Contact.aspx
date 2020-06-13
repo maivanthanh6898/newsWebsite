@@ -122,7 +122,7 @@
                                                 NavigateUrl="loginForm.aspx"
                                                 Text="Đăng nhập"
                                                 runat="server" /></li>
-                                        <li><asp:HyperLink ID="hyperlink4"
+                                        <li class="active"><asp:HyperLink ID="hyperlink4"
                                                 NavigateUrl="Contact.aspx"
                                                 Text="Liên hệ"
                                                 runat="server" /></li>
