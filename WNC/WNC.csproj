@@ -105,9 +105,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="archive-grid.html" />
-    <Content Include="archive-list.html" />
     <Content Include="Category.aspx" />
+    <Content Include="Contact.aspx" />
     <Content Include="contact.html" />
     <Content Include="css\animate.css" />
     <Content Include="css\bootstrap.min.css" />
@@ -177,7 +176,6 @@
     <Content Include="img\core-img\logo.png" />
     <Content Include="img\core-img\logo2.png" />
     <Content Include="index.aspx" />
-    <Content Include="index.html" />
     <Content Include="js\active.js" />
     <Content Include="js\bootstrap\bootstrap.min.js" />
     <Content Include="js\bootstrap\popper.min.js" />
@@ -607,12 +605,10 @@
     <Content Include="js\plugins\ckeditor\styles.js" />
     <Content Include="js\plugins\ckeditor\vendor\promise.js" />
     <Content Include="js\plugins\plugins.js" />
-    <Content Include="login.html" />
     <Content Include="loginForm.aspx" />
     <Content Include="PostEditor.aspx" />
     <Content Include="single-post.html" />
     <Content Include="style.css" />
-    <Content Include="typography.html" />
     <Content Include="video-post.html" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -625,6 +621,13 @@
     </Compile>
     <Compile Include="Category.aspx.designer.cs">
       <DependentUpon>Category.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Contact.aspx.cs">
+      <DependentUpon>Contact.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Contact.aspx.designer.cs">
+      <DependentUpon>Contact.aspx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -642,6 +645,13 @@
     </Compile>
     <Compile Include="loginForm.aspx.designer.cs">
       <DependentUpon>loginForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MenuHeader.Master.cs">
+      <DependentUpon>MenuHeader.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MenuHeader.Master.designer.cs">
+      <DependentUpon>MenuHeader.Master</DependentUpon>
     </Compile>
     <Compile Include="PostEditor.aspx.cs">
       <DependentUpon>PostEditor.aspx</DependentUpon>
@@ -685,6 +695,7 @@
     <Content Include="js\plugins\ckeditor\samples\toolbarconfigurator\font\fontello.woff" />
     <Content Include="js\plugins\ckeditor\samples\toolbarconfigurator\lib\codemirror\LICENSE" />
     <Content Include="js\plugins\ckeditor\skins\moono-lisa\readme.md" />
+    <Content Include="MenuHeader.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

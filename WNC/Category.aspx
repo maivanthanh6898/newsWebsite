@@ -56,13 +56,6 @@
                         <div class="col-12 col-md-6">
                             <div class="top-meta-data d-flex align-items-center justify-content-end">
                                 <!-- Top Social Info -->
-                                <%-- <div class="top-social-info">
-                                    <a href="#"><i class="fa fa-facebook"></i></a>
-                                    <a href="#"><i class="fa fa-twitter"></i></a>
-                                    <a href="#"><i class="fa fa-pinterest"></i></a>
-                                    <a href="#"><i class="fa fa-linkedin"></i></a>
-                                    <a href="#"><i class="fa fa-youtube-play"></i></a>
-                                </div>--%>
                                 <!-- Top Search Area -->
                                 <div class="top-search-area">
                                     <form action="index.html" method="post">
@@ -113,8 +106,8 @@
                                 <!-- Nav Start -->
                                 <div class="classynav">
                                     <ul>
-                                        <li ><a href="index.aspx">Trang chủ</a></li>
-                                        <li class="active">
+                                        <li class="active"><a href="index.aspx">Trang chủ</a></li>
+                                        <li>
                                             <a href="#">Danh mục</a>
                                             <ul class="dropdown">
                                                 <asp:Repeater ID="rptCategory" runat="server">
@@ -129,10 +122,13 @@
                                                 NavigateUrl="loginForm.aspx"
                                                 Text="Đăng nhập"
                                                 runat="server" /></li>
-                                        <li><a href="contact.html">Liên hệ</a></li>
+                                        <li><asp:HyperLink ID="hyperlink4"
+                                                NavigateUrl="Contact.aspx"
+                                                Text="Liên hệ"
+                                                runat="server" /></li>
                                         <li>
                                             <asp:HyperLink ID="hyperlink1"
-                                                NavigateUrl="contact.html"
+                                                NavigateUrl="PostEditor.aspx"
                                                 Text="Admin"
                                                 runat="server" />
                                         </li>

@@ -7,13 +7,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WNC
-{
-
-
-    public partial class index1
-    {
-
+namespace WNC {
+    
+    
+    public partial class index1 {
+        
         /// <summary>
         /// form1 control.
         /// </summary>
@@ -22,7 +20,7 @@ namespace WNC
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
-
+        
         /// <summary>
         /// hyperlink2 control.
         /// </summary>
@@ -31,7 +29,7 @@ namespace WNC
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.HyperLink hyperlink2;
-
+        
         /// <summary>
         /// username control.
         /// </summary>
@@ -40,7 +38,7 @@ namespace WNC
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label username;
-
+        
         /// <summary>
         /// rptCategory control.
         /// </summary>
@@ -49,7 +47,7 @@ namespace WNC
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Repeater rptCategory;
-
+        
         /// <summary>
         /// hyperlink3 control.
         /// </summary>
@@ -58,7 +56,16 @@ namespace WNC
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.HyperLink hyperlink3;
-
+        
+        /// <summary>
+        /// hyperlink4 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink hyperlink4;
+        
         /// <summary>
         /// hyperlink1 control.
         /// </summary>
@@ -67,7 +74,7 @@ namespace WNC
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.HyperLink hyperlink1;
-
+        
         /// <summary>
         /// rptBigNews control.
         /// </summary>
@@ -76,7 +83,7 @@ namespace WNC
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Repeater rptBigNews;
-
+        
         /// <summary>
         /// rpt10LastestNews control.
         /// </summary>
@@ -85,7 +92,7 @@ namespace WNC
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Repeater rpt10LastestNews;
-
+        
         /// <summary>
         /// rptTredingNews control.
         /// </summary>
@@ -94,7 +101,7 @@ namespace WNC
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Repeater rptTredingNews;
-
+        
         /// <summary>
         /// ParentRepeater control.
         /// </summary>
@@ -103,7 +110,7 @@ namespace WNC
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Repeater ParentRepeater;
-
+        
         /// <summary>
         /// rptLastestNews control.
         /// </summary>
@@ -112,7 +119,7 @@ namespace WNC
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Repeater rptLastestNews;
-
+        
         /// <summary>
         /// Repeater4 control.
         /// </summary>
@@ -121,7 +128,7 @@ namespace WNC
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Repeater Repeater4;
-
+        
         /// <summary>
         /// Repeater5 control.
         /// </summary>

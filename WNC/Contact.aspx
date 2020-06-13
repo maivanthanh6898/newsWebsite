@@ -1,3 +1,5 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Contact.aspx.cs" Inherits="WNC.Contact" %>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -32,144 +34,113 @@
 
     <!-- ##### Header Area Start ##### -->
     <header class="header-area">
-        <!-- Top Header Area -->
-        <div class="top-header-area">
-            <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-12 col-md-6">
-                        <!-- Breaking News Widget -->
-                        <div class="breaking-news-area d-flex align-items-center">
-                            <div class="news-title">
-                                <p>Breaking News:</p>
-                            </div>
-                            <div id="breakingNewsTicker" class="ticker">
-                                <ul>
-                                    <li><a href="single-post.html">10 Things Amazon Echo Can Do</a></li>
-                                    <li><a href="single-post.html">Welcome to Colorlib Family.</a></li>
-                                    <li><a href="single-post.html">Boys 'doing well' after Thai</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-12 col-md-6">
-                        <div class="top-meta-data d-flex align-items-center justify-content-end">
-                            <!-- Top Social Info -->
-                            <div class="top-social-info">
-                                <a href="#"><i class="fa fa-facebook"></i></a>
-                                <a href="#"><i class="fa fa-twitter"></i></a>
-                                <a href="#"><i class="fa fa-pinterest"></i></a>
-                                <a href="#"><i class="fa fa-linkedin"></i></a>
-                                <a href="#"><i class="fa fa-youtube-play"></i></a>
-                            </div>
-                            <!-- Top Search Area -->
-                            <div class="top-search-area">
-                                <form action="index.html" method="post">
-                                    <input type="search" name="top-search" id="topSearch" placeholder="Search...">
-                                    <button type="submit" class="btn"><i class="fa fa-search" aria-hidden="true"></i></button>
-                                </form>
-                            </div>
-                            <!-- Login -->
-                            <a href="login.html" class="login-btn"><i class="fa fa-user" aria-hidden="true"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Navbar Area -->
-        <div class="vizew-main-menu" id="sticker">
-            <div class="classy-nav-container breakpoint-off">
+            <!-- Top Header Area -->
+            <div class="top-header-area">
                 <div class="container">
-
-                    <!-- Menu -->
-                    <nav class="classy-navbar justify-content-between" id="vizewNav">
-
-                        <!-- Nav brand -->
-                        <a href="index.html" class="nav-brand"><img src="img/core-img/logo.png" alt=""></a>
-
-                        <!-- Navbar Toggler -->
-                        <div class="classy-navbar-toggler">
-                            <span class="navbarToggler"><span></span><span></span><span></span></span>
-                        </div>
-
-                        <div class="classy-menu">
-
-                            <!-- Close Button -->
-                            <div class="classycloseIcon">
-                                <div class="cross-wrap"><span class="top"></span><span class="bottom"></span></div>
+                    <div class="row align-items-center">
+                        <div class="col-12 col-md-6">
+                            <!-- Breaking News Widget -->
+                            <div class="breaking-news-area d-flex align-items-center">
+                                <div class="news-title">
+                                    <p>Breaking News:</p>
+                                </div>
+                                <div id="breakingNewsTicker" class="ticker">
+                                    <ul>
+                                        <li><a href="single-post.html">10 Things Amazon Echo Can Do</a></li>
+                                        <li><a href="single-post.html">Welcome to Colorlib Family.</a></li>
+                                        <li><a href="single-post.html">Boys 'doing well' after Thai</a></li>
+                                    </ul>
+                                </div>
                             </div>
-
-                            <!-- Nav Start -->
-                            <div class="classynav">
-                                <ul>
-                                    <li class="active"><a href="index.html">Home</a></li>
-                                    <li><a href="archive-list.html">Archives</a></li>
-                                    <li><a href="#">Pages</a>
-                                        <ul class="dropdown">
-                                            <li><a href="index.html">- Home</a></li>
-                                            <li><a href="archive-list.html">- Archive List</a></li>
-                                            <li><a href="archive-grid.html">- Archive Grid</a></li>
-                                            <li><a href="single-post.html">- Single Post</a></li>
-                                            <li><a href="video-post.html">- Single Video Post</a></li>
-                                            <li><a href="contact.html">- Contact</a></li>
-                                            <li><a href="typography.html">- Typography</a></li>
-                                            <li><a href="login.html">- Login</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="#">Features</a>
-                                        <div class="megamenu">
-                                            <ul class="single-mega cn-col-4">
-                                                <li><a href="index.html">- Home</a></li>
-                                                <li><a href="archive-list.html">- Archive List</a></li>
-                                                <li><a href="archive-grid.html">- Archive Grid</a></li>
-                                                <li><a href="single-post.html">- Single Post</a></li>
-                                                <li><a href="video-post.html">- Single Video Post</a></li>
-                                                <li><a href="contact.html">- Contact</a></li>
-                                                <li><a href="typography.html">- Typography</a></li>
-                                                <li><a href="login.html">- Login</a></li>
-                                            </ul>
-                                            <ul class="single-mega cn-col-4">
-                                                <li><a href="index.html">- Home</a></li>
-                                                <li><a href="archive-list.html">- Archive List</a></li>
-                                                <li><a href="archive-grid.html">- Archive Grid</a></li>
-                                                <li><a href="single-post.html">- Single Post</a></li>
-                                                <li><a href="video-post.html">- Single Video Post</a></li>
-                                                <li><a href="contact.html">- Contact</a></li>
-                                                <li><a href="typography.html">- Typography</a></li>
-                                                <li><a href="login.html">- Login</a></li>
-                                            </ul>
-                                            <ul class="single-mega cn-col-4">
-                                                <li><a href="index.html">- Home</a></li>
-                                                <li><a href="archive-list.html">- Archive List</a></li>
-                                                <li><a href="archive-grid.html">- Archive Grid</a></li>
-                                                <li><a href="single-post.html">- Single Post</a></li>
-                                                <li><a href="video-post.html">- Single Video Post</a></li>
-                                                <li><a href="contact.html">- Contact</a></li>
-                                                <li><a href="typography.html">- Typography</a></li>
-                                                <li><a href="login.html">- Login</a></li>
-                                            </ul>
-                                            <ul class="single-mega cn-col-4">
-                                                <li><a href="index.html">- Home</a></li>
-                                                <li><a href="archive-list.html">- Archive List</a></li>
-                                                <li><a href="archive-grid.html">- Archive Grid</a></li>
-                                                <li><a href="single-post.html">- Single Post</a></li>
-                                                <li><a href="video-post.html">- Single Video Post</a></li>
-                                                <li><a href="contact.html">- Contact</a></li>
-                                                <li><a href="typography.html">- Typography</a></li>
-                                                <li><a href="login.html">- Login</a></li>
-                                            </ul>
-                                        </div>
-                                    </li>
-                                    <li><a href="contact.html">Contact</a></li>
-                                </ul>
-                            </div>
-                            <!-- Nav End -->
                         </div>
-                    </nav>
+                        <div class="col-12 col-md-6">
+                            <div class="top-meta-data d-flex align-items-center justify-content-end">
+                                <!-- Top Social Info -->
+                                <!-- Top Search Area -->
+                                <div class="top-search-area">
+                                    <form action="index.html" method="post">
+                                        <input type="search" name="top-search" id="topSearch" placeholder="Search...">
+                                        <button type="submit" class="btn"><i class="fa fa-search" aria-hidden="true"></i></button>
+                                    </form>
+                                </div>
+                                <!-- Login -->
+                                <asp:HyperLink ID="hyperlink2"
+                                    NavigateUrl="loginForm.aspx"
+                                    Text="Admin"
+                                    runat="server"
+                                    class="login-btn">
+                                    <i class="fa fa-user" aria-hidden="true">
+
+                                    </i></asp:HyperLink>
+                                <asp:Label ID="username" runat="server"></asp:Label>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </header>
+
+            <!-- Navbar Area -->
+            <div class="vizew-main-menu" id="sticker">
+                <div class="classy-nav-container breakpoint-off">
+                    <div class="container">
+
+                        <!-- Menu -->
+                        <nav class="classy-navbar justify-content-between" id="vizewNav">
+
+                            <!-- Nav brand -->
+                            <a href="index.html" class="nav-brand">
+                                <img src="img/core-img/logo.png" alt=""></a>
+
+                            <!-- Navbar Toggler -->
+                            <div class="classy-navbar-toggler">
+                                <span class="navbarToggler"><span></span><span></span><span></span></span>
+                            </div>
+
+                            <div class="classy-menu">
+
+                                <!-- Close Button -->
+                                <div class="classycloseIcon">
+                                    <div class="cross-wrap"><span class="top"></span><span class="bottom"></span></div>
+                                </div>
+
+                                <!-- Nav Start -->
+                                <div class="classynav">
+                                    <ul>
+                                        <li class="active"><a href="index.aspx">Trang chủ</a></li>
+                                        <li>
+                                            <a href="#">Danh mục</a>
+                                            <ul class="dropdown">
+                                                <asp:Repeater ID="rptCategory" runat="server">
+                                                    <ItemTemplate>
+                                                        <li><a href="Category.aspx?category=<%#Eval("Id")%>">- <%#Eval("sCategoryName")%></a></li>
+                                                    </ItemTemplate>
+                                                </asp:Repeater>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <asp:HyperLink ID="hyperlink3"
+                                                NavigateUrl="loginForm.aspx"
+                                                Text="Đăng nhập"
+                                                runat="server" /></li>
+                                        <li><asp:HyperLink ID="hyperlink4"
+                                                NavigateUrl="Contact.aspx"
+                                                Text="Liên hệ"
+                                                runat="server" /></li>
+                                        <li>
+                                            <asp:HyperLink ID="hyperlink1"
+                                                NavigateUrl="PostEditor.aspx"
+                                                Text="Admin"
+                                                runat="server" />
+                                        </li>
+                                    </ul>
+                                </div>
+                                <!-- Nav End -->
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </header>
     <!-- ##### Header Area End ##### -->
 
     <!-- ##### Breadcrumb Area Start ##### -->
@@ -180,7 +151,7 @@
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a href="#"><i class="fa fa-home" aria-hidden="true"></i> Home</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">Login</li>
+                            <li class="breadcrumb-item active" aria-current="page">Contact</li>
                         </ol>
                     </nav>
                 </div>
@@ -189,39 +160,68 @@
     </div>
     <!-- ##### Breadcrumb Area End ##### -->
 
-    <!-- ##### Login Area Start ##### -->
-    <div class="vizew-login-area section-padding-80">
+    <!-- ##### Contact Area Start ##### -->
+    <section class="contact-area mb-80">
         <div class="container">
             <div class="row justify-content-center">
-                <div class="col-12 col-md-6">
-                    <div class="login-content">
-                        <!-- Section Title -->
-                        <div class="section-heading">
-                            <h4>Great to have you back!</h4>
-                            <div class="line"></div>
+                <div class="col-12 col-md-7 col-lg-8">
+                    <!-- Section Heading -->
+                    <div class="section-heading style-2">
+                        <h4>Contact</h4>
+                        <div class="line"></div>
+                    </div>
+
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+
+                    <!-- Contact Form Area -->
+                    <div class="contact-form-area mt-50">
+                        <form action="#" method="post">
+                            <div class="form-group">
+                                <label for="name">Name*</label>
+                                <input type="text" class="form-control" id="name">
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email*</label>
+                                <input type="email" class="form-control" id="email">
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Message*</label>
+                                <textarea name="message" class="form-control" id="message" cols="30" rows="10"></textarea>
+                            </div>
+                            <button class="btn vizew-btn mt-30" type="submit">Send Now</button>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-5 col-lg-4">
+                    <div class="sidebar-area">
+                        <!-- ***** Single Widget ***** -->
+                        <div class="single-widget newsletter-widget mb-50">
+                            <!-- Section Heading -->
+                            <div class="section-heading style-2 mb-30">
+                                <h4>Newsletter</h4>
+                                <div class="line"></div>
+                            </div>
+                            <p>Subscribe our newsletter gor get notification about new updates, information discount, etc.</p>
+                            <!-- Newsletter Form -->
+                            <div class="newsletter-form">
+                                <form action="#" method="post">
+                                    <input type="email" name="nl-email" class="form-control mb-15" id="emailnl" placeholder="Enter your email">
+                                    <button type="submit" class="btn vizew-btn w-100">Subscribe</button>
+                                </form>
+                            </div>
                         </div>
 
-                        <form action="index.html" method="post">
-                            <div class="form-group">
-                                <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email or User Name">
-                            </div>
-                            <div class="form-group">
-                                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-                            </div>
-                            <div class="form-group">
-                                <div class="custom-control custom-checkbox mr-sm-2">
-                                    <input type="checkbox" class="custom-control-input" id="customControlAutosizing">
-                                    <label class="custom-control-label" for="customControlAutosizing">Remember me</label>
-                                </div>
-                            </div>
-                            <button type="submit" class="btn vizew-btn w-100 mt-30">Login</button>
-                        </form>
+                        <!-- ***** Single Widget ***** -->
+                        <div class="single-widget add-widget">
+                            <a href="#"><img src="img/bg-img/add.png" alt=""></a>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <!-- ##### Login Area End ##### -->
+    </section>
+    <!-- ##### Contact Area End ##### -->
 
     <!-- ##### Footer Area Start ##### -->
     <footer class="footer-area">
