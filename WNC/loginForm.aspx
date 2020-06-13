@@ -105,7 +105,7 @@
                                 <!-- Nav Start -->
                                 <div class="classynav">
                                     <ul>
-                                        <li class="active"><a href="index.aspx">Trang chủ</a></li>
+                                        <li><a href="index.aspx">Trang chủ</a></li>
                                         <li>
                                             <a href="#">Danh mục</a>
                                             <ul class="dropdown">
@@ -116,7 +116,7 @@
                                                 </asp:Repeater>
                                             </ul>
                                         </li>
-                                        <li>
+                                        <li class="active">
                                             <asp:HyperLink ID="hyperlink3"
                                                 NavigateUrl="loginForm.aspx"
                                                 Text="Đăng nhập"
