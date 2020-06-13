@@ -1,4 +1,6 @@
-﻿CREATE TABLE [dbo].[tblUsers]
+﻿drop database BTL
+
+CREATE TABLE [dbo].[tblUsers]
 (
     [iID] INT PRIMARY KEY IDENTITY(1,1), 
 	[sUsername] NVARCHAR(MAX) NOT NULL ,
@@ -63,8 +65,7 @@ CREATE TABLE [dbo].[tblCategories] (
     PRIMARY KEY CLUSTERED ([Id] ASC)
 );
 
-
-
+alter table tblCategories add sImage NVARCHAR(50) NULL
 
 SET IDENTITY_INSERT [dbo].[tblCategories] ON
 INSERT INTO [dbo].[tblCategories] ([Id], [sCategoryName], [sImage]) VALUES (1, N'Thể thao', N'sport.png')
@@ -108,7 +109,7 @@ and bIsAproved = 1
 order by iViews Desc
 end
 
-Create proc SP_doGetNewByCategory
+alter proc SP_doGetNewByCategory
 @categoryId int
 as begin
 select * from tblCategories,tblNews,tblUsers
@@ -120,3 +121,20 @@ end
 
 
 SP_doGetNewByCategory 1
+
+CREATE PROCEDURE sp_InsertNewPost
+       -- Add the parameters for the stored procedure here
+       @sTitle nvarchar(max),
+       @sContent nvarchar(max),
+       @bIsAproved bit,
+       @sPostedDate nvarchar(50),
+	   @sPostedBy nvarchar(50),
+	   @imgPicture nvarchar(50),
+	   @sCategory int
+AS
+BEGIN
+       INSERT INTO tblNews
+              (sTitle, sContent, bIsAproved, sPostedDate, sPostedBy, imgPicture, sCategory)
+       VALUES
+              (@sTitle, @sContent, @bIsAproved, @sPostedDate,@sPostedBy,@imgPicture,@sCategory)
+END 

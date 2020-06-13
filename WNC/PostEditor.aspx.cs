@@ -7,6 +7,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.IO;
 
 namespace WNC
 {
@@ -16,7 +17,14 @@ namespace WNC
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            LoadDDLCategory();
+            if((bool) Session["isAdmin"] == true)
+            {
+                LoadDDLCategory();
+            }
+            else
+            {
+                Response.Redirect("index.aspx");
+            }
         }
 
         private void LoadDDLCategory()
@@ -36,6 +44,81 @@ namespace WNC
                     ddlCategory.DataTextField = "sCategoryName";
                     ddlCategory.DataValueField = "Id";
                     ddlCategory.DataBind();
+                }
+            }
+        }
+
+        private void GhiFileAnh()
+        {
+            try
+            {
+                if (picUp.PostedFile != null)
+                {
+                    HttpPostedFile myfile = picUp.PostedFile;
+                    int nFileLen = myfile.ContentLength;
+                    byte[] mydata = new byte[nFileLen];
+                    myfile.InputStream.Read(mydata, 0, nFileLen);
+                    string strFilename = Path.GetFileName(myfile.FileName);
+                    WriteToFile(Server.MapPath("./img/content-img/" + strFilename), ref mydata);
+                }
+            }
+            catch
+            { }
+        }
+        private void WriteToFile(string strPath, ref byte[] Buffer)
+        {
+            try
+            {
+                FileStream newFile = new FileStream(strPath, FileMode.Create);
+                newFile.Write(Buffer, 0, Buffer.Length);
+                newFile.Close();
+            }
+            catch { }
+        }
+
+        protected void btnChooseImage_Click(object sender, EventArgs e)
+        {
+            imagePic.Visible = false;
+            picUp.Visible = true;
+            btnChooseImage.Visible = false;
+        }
+
+        protected void btnSendPost_Click(object sender, EventArgs e)
+        {
+            HttpPostedFile myfile = picUp.PostedFile;
+            string strFileName = picUp.FileName + "";
+            if (strFileName != "")
+            {
+                GhiFileAnh();
+            }
+            else
+            {
+                strFileName = imagePic.ImageUrl;
+                GhiFileAnh();
+            }
+
+            using (SqlConnection conn = new SqlConnection(sCnStr))
+            {
+                conn.Open();
+                SqlCommand comm = new SqlCommand();
+                comm.Connection = conn;
+                comm.CommandType = CommandType.StoredProcedure;
+                comm.CommandText = "sp_InsertNewPost";
+                comm.Parameters.AddWithValue("@sTitle", txtTitle.Text);
+                comm.Parameters.AddWithValue("@sContent", ckcontent.InnerText);
+                comm.Parameters.AddWithValue("@bIsAproved", 1);
+                comm.Parameters.AddWithValue("@sPostedDate", new DateTime().ToString());
+                comm.Parameters.AddWithValue("@sPostedBy", Session["name"].ToString());
+                comm.Parameters.AddWithValue("@imgPicture", "img/content-img/" + strFileName);
+                comm.Parameters.AddWithValue("@sCategory", ddlCategory.SelectedValue);
+                int kq = comm.ExecuteNonQuery();
+                if (kq != 0)
+                {
+                    Response.Write("<script>alert('Thành công')</script>");
+                }
+                else
+                {
+                    Response.Write("<script>alert('Thất bại')</script>");
                 }
             }
         }
