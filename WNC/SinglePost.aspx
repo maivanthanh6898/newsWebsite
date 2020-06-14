@@ -1,26 +1,8 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="SinglePost.aspx.cs" Inherits="WNC.SinglePost" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Master.Master" AutoEventWireup="true" CodeBehind="SinglePost.aspx.cs" Inherits="WNC.SinglePost" %>
 
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="description" content="">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-
-    <!-- Title -->
-    <title>Vizew - Blog &amp; Magazine HTML Template</title>
-
-    <!-- Favicon -->
-    <link rel="icon" href="img/core-img/favicon.ico">
-
-    <!-- Stylesheet -->
-    <link rel="stylesheet" href="style.css">
-</head>
-
-<body>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <!-- Preloader -->
     <div class="preloader d-flex align-items-center justify-content-center">
         <div class="lds-ellipsis">
@@ -87,7 +69,7 @@
                     <nav class="classy-navbar justify-content-between" id="vizewNav">
 
                         <!-- Nav brand -->
-                        <a href="index.html" class="nav-brand">
+                        <a href="index.aspx" class="nav-brand">
                             <img src="img/core-img/logo.png" alt=""></a>
 
                         <!-- Navbar Toggler -->
@@ -152,7 +134,7 @@
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a href="index.aspx"><i class="fa fa-home" aria-hidden="true"></i>Trang chủ</a></li>
                             <li class="breadcrumb-item" id="categoryName" runat="server"></li>
-                            <li class="breadcrumb-item active" aria-current="page"  id="newTitle" runat="server"></li>
+                            <li class="breadcrumb-item active" aria-current="page" id="newTitle" runat="server"></li>
                         </ol>
                     </nav>
                 </div>
@@ -164,7 +146,7 @@
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-12">
-                    <div class="post-details-thumb mb-50" style="display:flex;justify-content:center" runat="server" id="image">
+                    <div class="post-details-thumb mb-50" style="display: flex; justify-content: center" runat="server" id="image">
                     </div>
                 </div>
                 <!-- Post Details Content Area -->
@@ -192,17 +174,4 @@
             </div>
         </div>
     </section>
-    <!-- ##### All Javascript Script ##### -->
-    <!-- jQuery-2.2.4 js -->
-    <script src="js/jquery/jquery-2.2.4.min.js"></script>
-    <!-- Popper js -->
-    <script src="js/bootstrap/popper.min.js"></script>
-    <!-- Bootstrap js -->
-    <script src="js/bootstrap/bootstrap.min.js"></script>
-    <!-- All Plugins js -->
-    <script src="js/plugins/plugins.js"></script>
-    <!-- Active js -->
-    <script src="js/active.js"></script>
-</body>
-
-</html>
+</asp:Content>
