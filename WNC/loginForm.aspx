@@ -126,12 +126,6 @@
                                                 Text="Liên hệ"
                                                 runat="server" /></li>
                                         <li>
-                                        <li>
-                                            <asp:HyperLink ID="hyperlink1"
-                                                NavigateUrl="contact.html"
-                                                Text="Admin"
-                                                runat="server" />
-                                        </li>
                                     </ul>
                                 </div>
                                 <!-- Nav End -->
@@ -168,7 +162,7 @@
                     <div class="login-content">
                         <!-- Section Title -->
                         <div class="section-heading">
-                            <h4>Great to have you back!</h4>
+                            <h4>Đăng nhập!</h4>
                             <div class="line"></div>
                         </div>
 

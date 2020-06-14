@@ -141,3 +141,13 @@ BEGIN
        VALUES
               (@sTitle, @sContent, @bIsAproved, @sPostedDate,@sPostedBy,@imgPicture,@sCategory)
 END 
+
+
+
+alter proc SP_doGetNew
+@id int
+as begin
+select * from tblNews,tblCategories,tblUsers where tblNews.Id=@id and tblNews.sCategory = tblCategories.Id and tblUsers.iID = tblNews.sPostedBy
+end
+
+SP_doGetNew 1
