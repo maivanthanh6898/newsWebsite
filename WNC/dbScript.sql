@@ -37,6 +37,9 @@ CREATE TABLE [dbo].[tblNews] (
     PRIMARY KEY CLUSTERED ([Id] ASC)
 );
 
+ALTER TABLE tblNews
+ALTER COLUMN imgPicture NVARCHAR (MAX)
+
 create proc SP_doQueryIndexContent
 as begin 
 select top 10 * from tblNews,tblCategories where bIsAproved = 1 and tblCategories.Id=tblNews.sCategory
