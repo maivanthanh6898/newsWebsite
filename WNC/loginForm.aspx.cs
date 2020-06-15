@@ -21,7 +21,12 @@ namespace WNC
             if (!string.IsNullOrEmpty(Session["name"] as string))
             {
                 Session["name"] = "";
+                Session["idUser"] = 0;
                 Session["isAdmin"] = false;
+            }
+            if (!Boolean.Parse(Session["isAdmin"].ToString()))
+            {
+                hyperlink1.Visible = false;
             }
         }
 
@@ -58,6 +63,7 @@ namespace WNC
                     while (reader.Read())
                     {
                         Session["name"] = username.Text.ToString();
+                        Session["idUser"] = reader.GetInt32(0);
                         Session["isAdmin"] = Boolean.Parse(reader["isAdmin"].ToString());
                         Response.Redirect("index.aspx");
                     }
