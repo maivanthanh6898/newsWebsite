@@ -80,7 +80,7 @@ namespace WNC
                         categoryName.InnerHtml = reader.GetString(10);
                         newTitle.InnerHtml = reader.GetString(1);
                         author.InnerHtml = reader.GetString(16);
-                        date.InnerHtml = reader.GetDateTime(4).ToString();
+                        date.InnerHtml = reader.GetString(4);
                     }
                 }
             }

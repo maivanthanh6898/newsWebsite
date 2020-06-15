@@ -20,19 +20,6 @@
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col-12 col-md-6">
-                        <!-- Breaking News Widget -->
-                        <div class="breaking-news-area d-flex align-items-center">
-                            <div class="news-title">
-                                <p>Breaking News:</p>
-                            </div>
-                            <div id="breakingNewsTicker" class="ticker">
-                                <ul>
-                                    <li><a href="single-post.html">10 Things Amazon Echo Can Do</a></li>
-                                    <li><a href="single-post.html">Welcome to Colorlib Family.</a></li>
-                                    <li><a href="single-post.html">Boys 'doing well' after Thai</a></li>
-                                </ul>
-                            </div>
-                        </div>
                     </div>
                     <div class="col-12 col-md-6">
                         <div class="top-meta-data d-flex align-items-center justify-content-end">
@@ -169,6 +156,7 @@
                             </div>
                         </div>
                         <asp:Button ID="btnLogin" class="btn vizew-btn w-100 mt-30" runat="server" Text="Login" OnClick="btnLogin_Click" />
+                        <asp:HyperLink ID="btlRegist" class="btn vizew-btn w-100 mt-30" runat="server" Text="Register" NavigateUrl="~/Register.aspx" />
                     </div>
                 </div>
             </div>

@@ -151,3 +151,13 @@ select * from tblNews,tblCategories,tblUsers where tblNews.Id=@id and tblNews.sC
 end
 
 SP_doGetNew 1
+
+create proc SP_Register
+@usname nvarchar(50),
+@pass nvarchar(50),
+@name nvarchar(50),
+@desc nvarchar(50),
+@addr nvarchar(50)
+as begin
+insert into tblUsers values (@usname,@pass,1,@name,'12/12/2012',@desc,@addr)
+end

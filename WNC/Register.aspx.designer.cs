@@ -11,7 +11,7 @@ namespace WNC
 {
 
 
-    public partial class loginForm
+    public partial class Register
     {
 
         /// <summary>
@@ -60,13 +60,13 @@ namespace WNC
         protected global::System.Web.UI.WebControls.HyperLink hyperlink4;
 
         /// <summary>
-        /// hyperlink1 control.
+        /// form2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink hyperlink1;
+        protected global::System.Web.UI.HtmlControls.HtmlForm form2;
 
         /// <summary>
         /// username control.
@@ -87,21 +87,48 @@ namespace WNC
         protected global::System.Web.UI.WebControls.TextBox password;
 
         /// <summary>
-        /// btnLogin control.
+        /// repasword control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnLogin;
+        protected global::System.Web.UI.WebControls.TextBox repasword;
 
         /// <summary>
-        /// btlRegist control.
+        /// name control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink btlRegist;
+        protected global::System.Web.UI.WebControls.TextBox name;
+
+        /// <summary>
+        /// Desc control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox Desc;
+
+        /// <summary>
+        /// addr control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox addr;
+
+        /// <summary>
+        /// btnRegist control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnRegist;
     }
 }

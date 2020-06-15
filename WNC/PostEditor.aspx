@@ -22,18 +22,7 @@
                 <div class="row align-items-center">
                     <div class="col-12 col-md-6">
                         <!-- Breaking News Widget -->
-                        <div class="breaking-news-area d-flex align-items-center">
-                            <div class="news-title">
-                                <p>Breaking News:</p>
-                            </div>
-                            <div id="breakingNewsTicker" class="ticker">
-                                <ul>
-                                    <li><a href="single-post.html">10 Things Amazon Echo Can Do</a></li>
-                                    <li><a href="single-post.html">Welcome to Colorlib Family.</a></li>
-                                    <li><a href="single-post.html">Boys 'doing well' after Thai</a></li>
-                                </ul>
-                            </div>
-                        </div>
+                        
                     </div>
                     <div class="col-12 col-md-6">
                         <div class="top-meta-data d-flex align-items-center justify-content-end">
@@ -128,6 +117,8 @@
     <section class="hero--area section-padding-80">
 
         <asp:DropDownList ID="ddlCategory" AutoPostBack="True" runat="server"></asp:DropDownList>
+        <br />
+        <br />
 
         <div class="form-group">
             <asp:TextBox type="text" class="form-control" ID="txtTitle" placeholder="Title" runat="server"></asp:TextBox>
@@ -140,6 +131,7 @@
                 <asp:Button ID="btnChooseImage" runat="server" Text="Ảnh khác"
                     CssClass="buttonLogin" OnClick="btnChooseImage_Click" />
         </div>
+        <br />
         <textarea class="ckeditor" runat="server" id="ckcontent"></textarea>
         <asp:Button
             ID="btnSendPost"
