@@ -606,6 +606,7 @@
     <Content Include="js\plugins\plugins.js" />
     <Content Include="loginForm.aspx" />
     <Content Include="PostEditor.aspx" />
+    <Content Include="Register.aspx" />
     <Content Include="SinglePost.aspx" />
     <Content Include="style.css" />
     <Content Include="video-post.html" />
@@ -653,6 +654,13 @@
       <DependentUpon>PostEditor.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Register.aspx.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Register.aspx.designer.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+    </Compile>
     <Compile Include="SinglePost.aspx.cs">
       <DependentUpon>SinglePost.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
