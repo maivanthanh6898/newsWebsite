@@ -116,6 +116,7 @@
     <Content Include="css\owl.carousel.min.css" />
     <Content Include="css\themify-icons.css" />
     <Content Include="dbScript.sql" />
+    <Content Include="filterForm.aspx" />
     <Content Include="fonts\classy.svg" />
     <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="fonts\themify.svg" />
@@ -629,6 +630,13 @@
     </Compile>
     <Compile Include="Contact.aspx.designer.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="filterForm.aspx.cs">
+      <DependentUpon>filterForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="filterForm.aspx.designer.cs">
+      <DependentUpon>filterForm.aspx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

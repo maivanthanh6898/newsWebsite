@@ -97,17 +97,17 @@ end
 
 SP_doGetCategory
 
-create proc spGetLastestNews
+alter proc spGetLastestNews
 as begin 
 select top 4 * from tblUsers,tblNews,tblCategories 
 where tblNews.sCategory = tblCategories.Id and bIsAproved = 1 
-order by sPostedDate desc
+order by id desc
 end 
 
-Create proc SP_doGetTrendingNewsWeek
+alter proc SP_doGetTrendingNewsWeek
 as begin
 select top 10 * from tblNews
-where DATEDIFF(DAY, sPostedDate,  cast(getdate() as Date)) < 7
+where DATEDIFF(DAY, CONVERT(DATETIME, sPostedDate, 102),  cast(getdate() as Date)) < 7
 and bIsAproved = 1
 order by iViews Desc
 end
@@ -161,3 +161,16 @@ create proc SP_Register
 as begin
 insert into tblUsers values (@usname,@pass,1,@name,'12/12/2012',@desc,@addr)
 end
+
+
+alter proc SP_filter
+@title nvarchar(max)
+as begin
+select * from tblNews,tblCategories,tblUsers where tblNews.sTitle like N'%'+@title+'%' and tblNews.sPostedBy=tblUsers.iID and tblNews.sCategory=tblCategories.Id
+order by tblNews.Id desc
+end
+
+select * from tblNews
+select * from tblCategories
+
+SP_filter 'a'

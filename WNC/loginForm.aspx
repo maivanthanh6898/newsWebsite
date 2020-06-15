@@ -15,6 +15,20 @@
 
     <!-- ##### Header Area Start ##### -->
     <header class="header-area">
+        <script>
+            function search() {
+                var input = document.getElementById("topSearch");
+                window.location.href = "filterForm.aspx?filter=" + input.value
+            }
+
+            function search1() {
+                var input = document.getElementById("topSearch");
+                if (event.keyCode == 13) {
+                    event.preventDefault();
+                    document.getElementById("btn").click();
+                }
+            }
+        </script>
         <!-- Top Header Area -->
         <div class="top-header-area">
             <div class="container">
@@ -25,11 +39,10 @@
                         <div class="top-meta-data d-flex align-items-center justify-content-end">
                             <!-- Top Social Info -->
                             <!-- Top Search Area -->
+                            
                             <div class="top-search-area">
-                                <form action="index.html" method="post">
-                                    <input type="search" name="top-search" id="topSearch" placeholder="Search...">
-                                    <button type="submit" class="btn"><i class="fa fa-search" aria-hidden="true"></i></button>
-                                </form>
+                                    <input name="top-search" id="topSearch" placeholder="Search..." onkeydown="search1()">
+                                    <button type="button" class="btn" id="btn" onclick="search()"><i class="fa fa-search" aria-hidden="true" ></i></button>
                             </div>
                             <!-- Login -->
                             <asp:HyperLink ID="hyperlink2"

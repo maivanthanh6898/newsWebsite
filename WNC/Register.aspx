@@ -4,6 +4,20 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
+        <script>
+            function search() {
+                var input = document.getElementById("topSearch");
+                window.location.href = "filterForm.aspx?filter=" + input.value
+            }
+
+            function search1() {
+                var input = document.getElementById("topSearch");
+                if (event.keyCode == 13) {
+                    event.preventDefault();
+                    document.getElementById("btn").click();
+                }
+            }
+        </script>
     <meta charset="UTF-8">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -44,12 +58,11 @@
                             <div class="top-meta-data d-flex align-items-center justify-content-end">
                                 <!-- Top Social Info -->
                                 <!-- Top Search Area -->
-                                <div class="top-search-area">
-                                    <form action="index.html" method="post">
-                                        <input type="search" name="top-search" id="topSearch" placeholder="Search...">
-                                        <button type="submit" class="btn"><i class="fa fa-search" aria-hidden="true"></i></button>
-                                    </form>
-                                </div>
+                                
+                            <div class="top-search-area">
+                                    <input name="top-search" id="topSearch" placeholder="Search..." onkeydown="search1()">
+                                    <button type="button" class="btn" id="btn" onclick="search()"><i class="fa fa-search" aria-hidden="true" ></i></button>
+                            </div>>
                                 <!-- Login -->
                                 <asp:HyperLink ID="hyperlink2"
                                     NavigateUrl="loginForm.aspx"

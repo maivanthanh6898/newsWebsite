@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Master.Master" AutoEventWireup="true" CodeBehind="Category.aspx.cs" Inherits="WNC.Category" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/Master.Master" CodeBehind="filterForm.aspx.cs" Inherits="WNC.filterForm" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
@@ -15,16 +15,68 @@
     <!-- ##### Header Area Start ##### -->
     <header class="header-area">
         <script>
-            function search() {
-                var input = document.getElementById("topSearch");
-                window.location.href = "filterForm.aspx?filter=" + input.value
+            const urlParams = new URLSearchParams(window.location.search);
+            const myParam = urlParams.get('filter');
+            window.onload = function () {
+                if (myParam != null) {
+                    load(myParam);
+                }
             }
-
-            function search1() {
+            function search() {
                 var input = document.getElementById("topSearch");
                 if (event.keyCode == 13) {
                     event.preventDefault();
                     document.getElementById("btn").click();
+                }
+            }
+            function load(data) {
+                var search = document.getElementById("topSearch").value;
+                if (data == null) {
+                    data = search;
+                }
+                var xhttp = new XMLHttpRequest();
+                xhttp.onreadystatechange = function () {
+                    if (this.readyState == 4 && this.status == 200) {
+                        var json = JSON.parse(xhttp.responseText);
+                        result = JSON.parse(json.d)
+                        changePage(result);
+                    }
+                };
+                xhttp.open("POST", "filterForm.aspx/LoadNews", true);
+                xhttp.setRequestHeader("Content-type", "application/json; charset=utf-8");
+                xhttp.send(`{"filter":"${data}"}`);
+
+
+            }
+            function changePage(data) {
+                var news = document.getElementById("news");
+                news.innerHTML = "";
+                for (var i = 0; i < data.length; i++) {
+                    news.innerHTML +=
+                        `<div class="single-post-area mb-30">
+                                    <div class="row align-items-center">
+                                        <div class="col-12 col-lg-6">
+                                            <!-- Post Thumbnail -->
+                                            <div class="post-thumbnail">
+                                                    <a href="SinglePost.aspx?newId=${data[i].Id}">
+                                                <img src="img/content-img/${data[i].imgPicture}" alt="">
+                                                    </a>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 col-lg-6">
+                                            <!-- Post Content -->
+                                            <div class="post-content mt-0">
+                                                <a href="#" class="post-cata cata-sm cata-success">${data[i].sCategoryName}</a>
+                                                <a href="SinglePost.aspx?newId=${data[i].Id}" class="post-title mb-2">${data[i].sTitle}</a>
+                                                <div class="post-meta d-flex align-items-center mb-2">
+                                                    <a href="#" class="post-author">By ${data[i].sName}</a>
+                                                    <i class="fa fa-circle" aria-hidden="true"></i>
+                                                    <a href="#" class="post-date">${data[i].sPostedDate}></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>`
                 }
             }
         </script>
@@ -34,15 +86,15 @@
                 <div class="row align-items-center">
                     <div class="col-12 col-md-6">
                         <!-- Breaking News Widget -->
-                       
+
                     </div>
                     <div class="col-12 col-md-6">
                         <div class="top-meta-data d-flex align-items-center justify-content-end">
                             <!-- Top Social Info -->
                             <!-- Top Search Area -->
                             <div class="top-search-area">
-                                    <input name="top-search" id="topSearch" placeholder="Search..." onkeydown="search1()">
-                                    <button type="button" class="btn" id="btn" onclick="search()"><i class="fa fa-search" aria-hidden="true" ></i></button>
+                                <input name="top-search" id="topSearch" placeholder="Search..." onkeydown="search()">
+                                <button type="button" id="btn" class="btn" onclick="load()"><i class="fa fa-search" aria-hidden="true"></i></button>
                             </div>
                             <!-- Login -->
                             <asp:HyperLink ID="hyperlink2"
@@ -133,38 +185,14 @@
                         <!-- Section Heading -->
                         <div class="section-heading style-2">
                             <br />
-                            <h4 style="text-align: center" id="title" runat="server">Latest News</h4>
+                            <h4 style="text-align: center" id="title" runat="server">Tin Tìm Kiếm</h4>
                             <br />
                             <div class="line"></div>
                         </div>
                         <!-- Single Post Area -->
+                        <div id="news"></div>
                         <asp:Repeater ID="rptNews" runat="server">
                             <ItemTemplate>
-                                <div class="single-post-area mb-30">
-                                    <div class="row align-items-center">
-                                        <div class="col-12 col-lg-6">
-                                            <!-- Post Thumbnail -->
-                                            <div class="post-thumbnail">
-                                                <img src="img/content-img/<%# Eval("imgPicture") %>" alt="">
-                                            </div>
-                                        </div>
-                                        <div class="col-12 col-lg-6">
-                                            <!-- Post Content -->
-                                            <div class="post-content mt-0">
-                                                <a href="#" class="post-cata cata-sm cata-success"><%# Eval("sCategoryName") %></a>
-                                                <a href="SinglePost.aspx?newId=<%#Eval("Id")%>" class="post-title mb-2"><%# Eval("sTitle") %></a>
-                                                <div class="post-meta d-flex align-items-center mb-2">
-                                                    <a href="#" class="post-author">By <%# Eval("sName") %></a>
-                                                    <i class="fa fa-circle" aria-hidden="true"></i>
-                                                    <a href="#" class="post-date"><%# Eval("sPostedDate") %></a>
-                                                </div>
-                                                <div class="post-meta d-flex">
-                                                    <a href="#"><i class="fa fa-eye" aria-hidden="true"></i><%# Eval("iViews") %></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
                             </ItemTemplate>
                         </asp:Repeater>
                     </div>
