@@ -40,10 +40,12 @@ CREATE TABLE [dbo].[tblNews] (
 ALTER TABLE tblNews
 ALTER COLUMN imgPicture NVARCHAR (MAX)
 
-create proc SP_doQueryIndexContent
+alter proc SP_doQueryIndexContent
 as begin 
 select top 10 * from tblNews,tblCategories where bIsAproved = 1 and tblCategories.Id=tblNews.sCategory
+order by tblNews.iViews desc
 end
+SP_doQueryIndexContent
 
 SET IDENTITY_INSERT [dbo].[tblNews] ON
 INSERT INTO [dbo].[tblNews] ([Id], [sTitle], [sContent], [bIsAproved], [sPostedDate], [sPostedBy], [imgPicture], [sCategory], [iViews]) VALUES (1, N'16 ngày không có ca Covid-19, ca nghi ngờ mới nhất mắc sốt xuất huyết', N'16 ngày không có ca Covid-19, ca nghi ngờ mới nhất mắc sốt xuất huyết', 1, N'2012-12-12 00:00:00', N'1', N'xetnghiem-1588417025788.jpg', 1, 0)
@@ -174,3 +176,34 @@ select * from tblNews
 select * from tblCategories
 
 SP_filter 'a'
+
+
+create proc SP_iViews
+@id int
+as begin 
+update tblNews set iViews=iViews+1 where Id=@id
+end
+
+select * from tblNews
+
+
+SP_iViews 3
+
+create proc SP_hideNews 
+@id int
+as begin
+update tblNews set bIsAproved = 0 where Id=@id
+end
+
+alter proc sp_Getallnews
+as begin
+select *,tblNews.Id as newId from tblCategories,tblNews,tblUsers
+where  tblCategories.Id=tblNews.sCategory
+and bIsAproved = 1  
+and tblNews.sPostedBy = tblUsers.iID
+end
+sp_Getallnews
+SP_hideNews 1004
+
+
+sp_Getallnews

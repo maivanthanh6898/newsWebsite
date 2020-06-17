@@ -16,11 +16,18 @@ namespace WNC
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!Boolean.Parse(Session["isAdmin"].ToString()))
+             if (!string.IsNullOrEmpty(Session["isAdmin"] as string))
             {
                 hyperlink1.Visible = false;
             }
             loadCategory();
+            if (!string.IsNullOrEmpty(Session["name"] as string))
+            {
+                username.Text = Session["name"].ToString();
+                hyperlink2.ToolTip = "Đăng xuất";
+                hyperlink2.NavigateUrl = "~/loginForm.aspx";
+                hyperlink3.Text = "Đăng xuất";
+            }
         }
 
         private void loadCategory()

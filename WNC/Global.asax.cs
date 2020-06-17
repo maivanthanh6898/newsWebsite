@@ -1,4 +1,4 @@
-﻿ using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -23,7 +23,22 @@ namespace WNC
 
         protected void Application_BeginRequest(object sender, EventArgs e)
         {
-
+            //if (Request.Cookies["username"] != null && Request.Cookies["password"] != null && Request.Cookies["id"] != null)
+            //{
+            //    HttpContext.Current.Items["name"] = Request.Cookies["username"].Value;
+            //    HttpContext.Current.Items["idUser"] = int.Parse(Request.Cookies["id"].Value);
+            //    HttpContext.Current.Items["isAdmin"] = true;
+            //}
+        }
+        protected void Application_AcquireRequestState(object sender, EventArgs e)
+        {
+            //HttpContext context = HttpContext.Current;
+            //if (context != null && context.Session != null)
+            //{
+            //    context.Session["name"] = HttpContext.Current.Items["name"];
+            //    context.Session["idUser"] = HttpContext.Current.Items["idUser"];
+            //    context.Session["isAdmin"] = HttpContext.Current.Items["isAdmin"];
+            //}
         }
 
         protected void Application_AuthenticateRequest(object sender, EventArgs e)
@@ -38,7 +53,7 @@ namespace WNC
 
         protected void Session_End(object sender, EventArgs e)
         {
-
+            //Response.Redirect("index.aspx");
         }
 
         protected void Application_End(object sender, EventArgs e)

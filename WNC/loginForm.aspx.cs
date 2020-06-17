@@ -16,17 +16,41 @@ namespace WNC
         private static readonly String sCnStr = ConfigurationManager.ConnectionStrings["dbConnection"].ConnectionString;
         protected void Page_Load(object sender, EventArgs e)
         {
-
             loadCategory();
             if (!string.IsNullOrEmpty(Session["name"] as string))
             {
+                //ExpireAllCookies();
                 Session["name"] = "";
                 Session["idUser"] = 0;
                 Session["isAdmin"] = false;
             }
-            if (!Boolean.Parse(Session["isAdmin"].ToString()))
+             if (!string.IsNullOrEmpty(Session["isAdmin"] as string))
             {
                 hyperlink1.Visible = false;
+            }
+        }
+
+        private void ExpireAllCookies()
+        {
+            if (HttpContext.Current != null)
+            {
+                int cookieCount = HttpContext.Current.Request.Cookies.Count;
+                for (var i = 0; i < cookieCount; i++)
+                {
+                    var cookie = HttpContext.Current.Request.Cookies[i];
+                    if (cookie != null)
+                    {
+                        var expiredCookie = new HttpCookie(cookie.Name)
+                        {
+                            Expires = DateTime.Now.AddDays(-1),
+                            Domain = cookie.Domain
+                        };
+                        HttpContext.Current.Response.Cookies.Add(expiredCookie); // overwrite it
+                    }
+                }
+
+                // clear cookies server side
+                HttpContext.Current.Request.Cookies.Clear();
             }
         }
 
@@ -65,6 +89,9 @@ namespace WNC
                         Session["name"] = username.Text.ToString();
                         Session["idUser"] = reader.GetInt32(0);
                         Session["isAdmin"] = Boolean.Parse(reader["isAdmin"].ToString());
+                        //Response.Cookies["userName"].Value = username.Text;
+                        //Response.Cookies["password"].Value = password.Text;
+                        //Response.Cookies["id"].Value = reader.GetInt32(0).ToString();
                         Response.Redirect("index.aspx");
                     }
                 }

@@ -15,7 +15,7 @@ namespace WNC
         private static readonly String sCnStr = ConfigurationManager.ConnectionStrings["dbConnection"].ConnectionString;
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!Boolean.Parse(Session["isAdmin"].ToString()))
+            if (!string.IsNullOrEmpty(Session["isAdmin"] as string))
             {
                 hyperlink1.Visible = false;
             }

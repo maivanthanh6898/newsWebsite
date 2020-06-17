@@ -121,6 +121,7 @@
     <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="fonts\themify.svg" />
     <Content Include="Global.asax" />
+    <Content Include="hideForm.aspx" />
     <Content Include="img\bg-img\1.jpg" />
     <Content Include="img\bg-img\10.jpg" />
     <Content Include="img\bg-img\11.jpg" />
@@ -640,6 +641,13 @@
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="hideForm.aspx.cs">
+      <DependentUpon>hideForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="hideForm.aspx.designer.cs">
+      <DependentUpon>hideForm.aspx</DependentUpon>
     </Compile>
     <Compile Include="index.aspx.cs">
       <DependentUpon>index.aspx</DependentUpon>

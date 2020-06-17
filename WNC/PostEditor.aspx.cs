@@ -24,6 +24,13 @@ namespace WNC
                     LoadDDLCategory();
 
                 }
+                if (!string.IsNullOrEmpty(Session["name"] as string))
+                {
+                    username.Text = Session["name"].ToString();
+                    hyperlink2.ToolTip = "Đăng xuất";
+                    hyperlink2.NavigateUrl = "~/loginForm.aspx";
+                    hyperlink3.Text = "Đăng xuất";
+                }
             }
             else
             {

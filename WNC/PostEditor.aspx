@@ -36,16 +36,16 @@
                 <div class="row align-items-center">
                     <div class="col-12 col-md-6">
                         <!-- Breaking News Widget -->
-                        
+
                     </div>
                     <div class="col-12 col-md-6">
                         <div class="top-meta-data d-flex align-items-center justify-content-end">
                             <!-- Top Social Info -->
                             <!-- Top Search Area -->
-                            
+
                             <div class="top-search-area">
-                                    <input name="top-search" id="topSearch" placeholder="Search..." onkeydown="search1()">
-                                    <button type="button" class="btn" id="btn" onclick="search()"><i class="fa fa-search" aria-hidden="true" ></i></button>
+                                <input name="top-search" id="topSearch" placeholder="Search..." onkeydown="search1()">
+                                <button type="button" class="btn" id="btn" onclick="search()"><i class="fa fa-search" aria-hidden="true"></i></button>
                             </div>
                             <!-- Login -->
                             <asp:HyperLink ID="hyperlink2"
@@ -127,6 +127,8 @@
         </div>
     </header>
     <!-- ##### Header Area End ##### -->
+
+    <button type="button" class="btn" id="btn"><a href="hideForm.aspx">Ẩn bài viết</a></button>
     <section class="hero--area section-padding-80">
 
         <asp:DropDownList ID="ddlCategory" AutoPostBack="True" runat="server"></asp:DropDownList>

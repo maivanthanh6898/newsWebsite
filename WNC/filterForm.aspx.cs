@@ -15,7 +15,7 @@ namespace WNC
         {
             if (!Page.IsPostBack)
             {
-                if (!Boolean.Parse(Session["isAdmin"].ToString()))
+                 if (!string.IsNullOrEmpty(Session["isAdmin"] as string))
                 {
                     hyperlink1.Visible = false;
                 }
@@ -28,7 +28,7 @@ namespace WNC
                     hyperlink2.NavigateUrl = "~/loginForm.aspx";
                     hyperlink3.Text = "Đăng xuất";
                 }
-                if (!Boolean.Parse(Session["isAdmin"].ToString()))
+                 if (!string.IsNullOrEmpty(Session["isAdmin"] as string))
                 {
                     hyperlink1.Visible = false;
                 }
